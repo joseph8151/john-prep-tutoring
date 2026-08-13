@@ -189,6 +189,7 @@
   if (footerBusinessEl) {
     var lines = [];
     lines.push(CONFIG.BUSINESS_NAME || 'JOHN PREP TUTORING');
+    if (CONFIG.CONTACT_PHONE) lines.push('문의전화 ' + CONFIG.CONTACT_PHONE);
     if (CONFIG.BUSINESS_REG_NUMBER) lines.push('사업자등록번호 ' + CONFIG.BUSINESS_REG_NUMBER);
     if (CONFIG.BUSINESS_ADDRESS) lines.push(CONFIG.BUSINESS_ADDRESS);
     if (CONFIG.BUSINESS_EMAIL) lines.push(CONFIG.BUSINESS_EMAIL);
