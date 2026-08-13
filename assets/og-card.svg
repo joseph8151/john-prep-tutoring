@@ -1,0 +1,15 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#173F35"/>
+  <circle cx="-40" cy="-80" r="310" fill="rgba(169,185,165,0.14)"/>
+  <circle cx="1280" cy="740" r="260" fill="rgba(234,228,216,0.08)"/>
+
+  <text x="90" y="150" font-family="Arial, sans-serif" font-weight="800" font-size="40" fill="#FFFFFF" letter-spacing="-0.5">JOHN PREP<tspan font-weight="700" font-size="17" fill="#A9B9A5" dx="14" dy="-2" letter-spacing="3">TUTORING</tspan></text>
+
+  <rect x="90" y="190" width="470" height="52" rx="26" fill="#EAE4D8"/>
+  <text x="115" y="224" font-family="Arial, sans-serif" font-weight="800" font-size="21" fill="#173F35">100% North American Native Teachers</text>
+
+  <text x="88" y="315" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', Arial, sans-serif" font-weight="800" font-size="50" fill="#FFFFFF">만 2세부터, 미국·캐나다 원어민</text>
+  <text x="88" y="378" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', Arial, sans-serif" font-weight="800" font-size="50" fill="#FFFFFF">선생님과의 1:1 방문 영어수업</text>
+
+  <text x="90" y="432" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', Arial, sans-serif" font-weight="500" font-size="24" fill="rgba(255,255,255,0.72)">전담 매니저 상담 후, 아이에게 맞는 원어민 선생님을 소개합니다.</text>
+</svg>

@@ -108,16 +108,16 @@ window.JOHN_PREP_DATA = {
   ],
 
   PROGRAMS: [
-    { name: "Phonics & Early Reading", desc: "소리와 글자를 연결하는 첫 읽기 기초 수업." },
-    { name: "Speaking & Conversation", desc: "자연스러운 대화를 통한 말하기 연습." },
-    { name: "Reading Comprehension", desc: "글의 흐름과 의미를 이해하는 읽기 훈련." },
-    { name: "Writing", desc: "생각을 문장과 글로 표현하는 쓰기 수업." },
-    { name: "Vocabulary", desc: "연령과 수준에 맞는 어휘 확장." },
-    { name: "Grammar", desc: "정확한 문장을 만드는 문법 학습." },
-    { name: "Academic English", desc: "학교 수업을 뒷받침하는 학술 영어." },
-    { name: "International School Preparation", desc: "국제학교 입학과 적응을 위한 준비 수업." },
-    { name: "School Support", desc: "학교 진도와 과제를 함께 챙기는 서포트 수업." },
-    { name: "Personalized English Program", desc: "위 영역을 조합한 맞춤형 커리큘럼." }
+    { name: "파닉스 · 첫 읽기 (Phonics)", desc: "소리와 글자를 연결하는 첫 읽기 기초 수업." },
+    { name: "말하기 (Speaking)", desc: "자연스러운 대화를 통한 말하기 연습." },
+    { name: "독해 (Reading)", desc: "글의 흐름과 의미를 이해하는 읽기 훈련." },
+    { name: "쓰기 (Writing)", desc: "생각을 문장과 글로 표현하는 쓰기 수업." },
+    { name: "어휘 (Vocabulary)", desc: "연령과 수준에 맞는 어휘 확장." },
+    { name: "문법 (Grammar)", desc: "정확한 문장을 만드는 문법 학습." },
+    { name: "학업 영어 (Academic English)", desc: "학교 수업을 뒷받침하는 학술 영어." },
+    { name: "국제학교 준비", desc: "국제학교 입학과 적응을 위한 준비 수업." },
+    { name: "학교 수업 서포트", desc: "학교 진도와 과제를 함께 챙기는 서포트 수업." },
+    { name: "맞춤형 통합 프로그램", desc: "위 영역을 조합한 맞춤형 커리큘럼." }
   ],
 
   PARENT_CONCERNS: [
