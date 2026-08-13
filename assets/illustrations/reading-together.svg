@@ -1,48 +1,48 @@
 <svg viewBox="0 0 480 576" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="원어민 선생님과 아이가 소파에 나란히 앉아 함께 책을 읽는 모습 일러스트">
-  <rect width="480" height="576" fill="#165B5C"/>
-  <rect width="480" height="576" fill="#1F7A7B" opacity="0.35"/>
+  <rect width="480" height="576" fill="#173F35"/>
+  <rect width="480" height="576" fill="#2A5648" opacity="0.35"/>
 
   <!-- bookshelf backdrop, upper area -->
   <g opacity="0.5">
-    <line x1="0" y1="120" x2="480" y2="120" stroke="#FAF7F0" stroke-width="3"/>
-    <rect x="40" y="60" width="26" height="60" fill="#D8C6A5"/>
-    <rect x="72" y="46" width="22" height="74" fill="#F0E6D6"/>
-    <rect x="100" y="66" width="30" height="54" fill="#C2AC85"/>
-    <rect x="356" y="52" width="24" height="68" fill="#F0E6D6"/>
-    <rect x="384" y="64" width="28" height="56" fill="#D8C6A5"/>
-    <rect x="416" y="42" width="22" height="78" fill="#C2AC85"/>
+    <line x1="0" y1="120" x2="480" y2="120" stroke="#F8F5EE" stroke-width="3"/>
+    <rect x="40" y="60" width="26" height="60" fill="#A9B9A5"/>
+    <rect x="72" y="46" width="22" height="74" fill="#EAE4D8"/>
+    <rect x="100" y="66" width="30" height="54" fill="#7E9078"/>
+    <rect x="356" y="52" width="24" height="68" fill="#EAE4D8"/>
+    <rect x="384" y="64" width="28" height="56" fill="#A9B9A5"/>
+    <rect x="416" y="42" width="22" height="78" fill="#7E9078"/>
   </g>
 
   <!-- sofa -->
-  <path d="M40,420 L440,420 L440,470 C440,486 428,498 412,498 L68,498 C52,498 40,486 40,470 Z" fill="#F0E6D6"/>
-  <rect x="40" y="392" width="400" height="46" rx="20" fill="#FAF7F0"/>
-  <rect x="52" y="366" width="60" height="70" rx="18" fill="#D8C6A5"/>
-  <rect x="368" y="366" width="60" height="70" rx="18" fill="#D8C6A5"/>
+  <path d="M40,420 L440,420 L440,470 C440,486 428,498 412,498 L68,498 C52,498 40,486 40,470 Z" fill="#EAE4D8"/>
+  <rect x="40" y="392" width="400" height="46" rx="20" fill="#F8F5EE"/>
+  <rect x="52" y="366" width="60" height="70" rx="18" fill="#A9B9A5"/>
+  <rect x="368" y="366" width="60" height="70" rx="18" fill="#A9B9A5"/>
 
   <!-- teacher figure (left, sitting on sofa) -->
   <g>
-    <rect x="120" y="298" width="104" height="122" rx="36" fill="#0F4142"/>
-    <path d="M120,332 C96,342 82,364 78,392" stroke="#0F4142" stroke-width="24" fill="none" stroke-linecap="round"/>
+    <rect x="120" y="298" width="104" height="122" rx="36" fill="#10241E"/>
+    <path d="M120,332 C96,342 82,364 78,392" stroke="#10241E" stroke-width="24" fill="none" stroke-linecap="round"/>
     <circle cx="172" cy="270" r="34" fill="#E7C9A9"/>
-    <path d="M138,264 A34,34 0 0 1 206,264 L206,248 A34,28 0 0 0 138,248 Z" fill="#0A2A2B"/>
+    <path d="M138,264 A34,34 0 0 1 206,264 L206,248 A34,28 0 0 0 138,248 Z" fill="#0B1F19"/>
   </g>
 
   <!-- child figure (right, sitting on sofa) -->
   <g>
-    <rect x="252" y="326" width="82" height="94" rx="28" fill="#C2AC85"/>
-    <path d="M334,352 C356,360 368,378 372,398" stroke="#C2AC85" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <rect x="252" y="326" width="82" height="94" rx="28" fill="#7E9078"/>
+    <path d="M334,352 C356,360 368,378 372,398" stroke="#7E9078" stroke-width="18" fill="none" stroke-linecap="round"/>
     <circle cx="292" cy="300" r="26" fill="#E7C9A9"/>
-    <path d="M266,296 A26,26 0 0 1 318,296 L318,284 A26,22 0 0 0 266,284 Z" fill="#0A2A2B"/>
+    <path d="M266,296 A26,26 0 0 1 318,296 L318,284 A26,22 0 0 0 266,284 Z" fill="#0B1F19"/>
   </g>
 
   <!-- open book across both laps -->
   <g>
     <path d="M158,392 L232,382 L232,414 L158,428 Z" fill="#FFFFFF"/>
-    <path d="M306,392 L232,382 L232,414 L306,428 Z" fill="#F6F1E7"/>
-    <line x1="232" y1="382" x2="232" y2="414" stroke="#D8C6A5" stroke-width="2"/>
-    <line x1="170" y1="398" x2="216" y2="392" stroke="#EADFC9" stroke-width="3"/>
-    <line x1="170" y1="408" x2="210" y2="403" stroke="#EADFC9" stroke-width="3"/>
-    <line x1="248" y1="394" x2="290" y2="399" stroke="#EADFC9" stroke-width="3"/>
-    <line x1="252" y1="406" x2="292" y2="410" stroke="#EADFC9" stroke-width="3"/>
+    <path d="M306,392 L232,382 L232,414 L306,428 Z" fill="#F3F0E8"/>
+    <line x1="232" y1="382" x2="232" y2="414" stroke="#A9B9A5" stroke-width="2"/>
+    <line x1="170" y1="398" x2="216" y2="392" stroke="#E4E0D2" stroke-width="3"/>
+    <line x1="170" y1="408" x2="210" y2="403" stroke="#E4E0D2" stroke-width="3"/>
+    <line x1="248" y1="394" x2="290" y2="399" stroke="#E4E0D2" stroke-width="3"/>
+    <line x1="252" y1="406" x2="292" y2="410" stroke="#E4E0D2" stroke-width="3"/>
   </g>
 </svg>
