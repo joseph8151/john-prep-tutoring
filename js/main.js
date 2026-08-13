@@ -94,12 +94,22 @@
     DATA.AGE_JOURNEY.forEach(function (stage) {
       var card = document.createElement('div');
       card.className = 'age-card';
-      var itemsHtml = stage.items.map(function (i) { return '<li>' + i + '</li>'; }).join('');
       card.innerHTML =
         '<span class="age-range">' + stage.range + '</span>' +
         '<h3>' + stage.title + '</h3>' +
-        '<ul>' + itemsHtml + '</ul>';
+        '<p>' + stage.desc + '</p>';
       ageJourneyEl.appendChild(card);
+    });
+  }
+
+  /* ---------- Render: Lesson style summary (Play-based / Academic / Balanced) ---------- */
+  var lessonStyleSummaryEl = document.getElementById('lessonStyleSummary');
+  if (lessonStyleSummaryEl && Array.isArray(DATA.LESSON_STYLE_SUMMARY)) {
+    DATA.LESSON_STYLE_SUMMARY.forEach(function (s) {
+      var card = document.createElement('div');
+      card.className = 'style-summary-card';
+      card.innerHTML = '<h3>' + s.name + '</h3><p>' + s.desc + '</p>';
+      lessonStyleSummaryEl.appendChild(card);
     });
   }
 

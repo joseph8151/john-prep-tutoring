@@ -80,30 +80,31 @@ window.JOHN_PREP_DATA = {
 
   AGE_JOURNEY: [
     {
-      range: "AGE 2–4",
-      title: "Play & First English",
-      items: ["Songs", "Picture Books", "Vocabulary", "Simple Conversation", "Natural Exposure"]
+      range: "만 2~4세",
+      title: "영어와 친해지는 시기",
+      desc: "그림책, 놀이, 노래와 자연스러운 대화를 통해 영어를 편안하게 접합니다."
     },
     {
-      range: "AGE 5–7",
-      title: "Phonics & Early Literacy",
-      items: ["Phonics", "CVC", "Reading", "Speaking", "Vocabulary"]
+      range: "만 5~7세",
+      title: "영어 기초를 만드는 시기",
+      desc: "말하기를 중심으로 파닉스, 리딩, 어휘와 기초 쓰기를 자연스럽게 연결합니다."
     },
     {
-      range: "AGE 8–12",
-      title: "Reading & Communication",
-      items: ["Reading Comprehension", "Speaking", "Writing", "Vocabulary", "Grammar"]
+      range: "초등 1~3학년",
+      title: "영어 활용 능력을 키우는 시기",
+      desc: "리딩, 스피킹, 어휘, 문법, 문장 쓰기를 균형 있게 진행합니다."
     },
     {
-      range: "TEENS",
-      title: "Academic English",
-      items: ["Academic Reading", "Essay Writing", "Grammar", "Vocabulary", "Presentation", "School Support"]
-    },
-    {
-      range: "INTERNATIONAL SCHOOL",
-      title: "International School Track",
-      items: ["Reading", "Writing", "Speaking", "Academic English", "School Assignment Support", "International School Preparation"]
+      range: "초등 4~6학년",
+      title: "학업 영어로 확장하는 시기",
+      desc: "독해, 라이팅, 어휘, 문법, 토론과 Academic English까지 확장합니다."
     }
+  ],
+
+  LESSON_STYLE_SUMMARY: [
+    { name: "놀이 중심", desc: "어린 학생이 부담 없이 영어에 익숙해질 수 있도록 놀이와 대화 중심으로 진행합니다." },
+    { name: "학습 중심", desc: "파닉스, 리딩, 라이팅, 어휘, 문법 등을 체계적으로 진행합니다." },
+    { name: "균형형", desc: "말하기와 활동, 리딩과 쓰기를 아이의 집중도와 수준에 맞춰 섞어서 진행합니다." }
   ],
 
   PROGRAMS: [
