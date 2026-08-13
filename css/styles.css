@@ -406,6 +406,18 @@ p{ margin:0; }
 .lesson-timeline li span:last-child{ font-weight:700; color: var(--forest); font-family: var(--font-en); }
 
 /* ==========================================================================
+   Sample post-lesson feedback card
+   ========================================================================== */
+.feedback-card{
+  max-width:520px; margin: 28px auto 0; background: var(--cream); border-radius: var(--radius-m);
+  padding: 30px 32px; display:flex; flex-direction:column; gap:16px;
+}
+.feedback-row{ border-top: 1px solid rgba(23,63,53,0.1); padding-top:14px; }
+.feedback-row:first-child{ border-top:none; padding-top:0; }
+.feedback-row dt{ font-family: var(--font-en); font-weight:800; font-size:0.72rem; letter-spacing:0.05em; color: var(--sage-deep); text-transform:uppercase; margin-bottom:6px; }
+.feedback-row dd{ margin:0; font-size:0.94rem; color: var(--charcoal); line-height:1.6; }
+
+/* ==========================================================================
    Testimonials
    ========================================================================== */
 .testimonial-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
