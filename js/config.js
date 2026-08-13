@@ -12,6 +12,10 @@ window.JOHN_PREP_CONFIG = {
 
   CONSULTATION_FORM_ACTION: "https://formspree.io/f/xeajzowv",
 
+  // TODO (optional): create a second Formspree form so tutor applications land in a separate
+  // inbox/thread from parent inquiries. Leave blank to reuse CONSULTATION_FORM_ACTION above.
+  TUTOR_APPLICATION_FORM_ACTION: "",
+
   // Business registration info — fill in when available. Left blank intentionally (never fabricate).
   BUSINESS_NAME: "JOHN PREP TUTORING",
   BUSINESS_REG_NUMBER: "", // 사업자등록번호

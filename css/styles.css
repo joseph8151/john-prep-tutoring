@@ -612,7 +612,12 @@ p{ margin:0; }
 .footer-nav{ display:flex; flex-wrap:wrap; gap: 14px 28px; max-width:480px; }
 .footer-nav a{ color: rgba(255,255,255,0.78); font-size:0.9rem; font-weight:500; }
 .footer-nav a:hover{ color: var(--sage); }
-.footer-support{ padding: 26px 28px 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom:26px; }
+.footer-paths{ display:flex; flex-wrap:wrap; gap:14px 40px; padding: 24px 28px 0; }
+.footer-path{ display:flex; align-items:baseline; gap:10px; }
+.footer-path-label{ font-family: var(--font-en); font-weight:800; font-size:0.7rem; letter-spacing:0.06em; color: var(--sage); }
+.footer-path a{ color: var(--white); font-weight:600; font-size:0.9rem; }
+.footer-path a:hover{ color: var(--sage); }
+.footer-support{ padding: 22px 28px 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom:26px; }
 .footer-support-title{ font-family: var(--font-en); font-weight:700; font-size:0.78rem; letter-spacing:0.06em; color: rgba(255,255,255,0.5); text-transform:uppercase; margin-bottom:10px; }
 .footer-support p{ color: rgba(255,255,255,0.72); font-size:0.86rem; line-height:1.9; }
 .footer-business{ padding: 22px 28px 0; }
