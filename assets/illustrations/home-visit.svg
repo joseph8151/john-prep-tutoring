@@ -1,0 +1,47 @@
+<svg viewBox="0 0 480 576" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="원어민 선생님이 가방을 들고 학생의 집 현관에 방문하고 아이가 반갑게 맞이하는 모습 일러스트">
+  <rect width="480" height="576" fill="#FAF7F0"/>
+
+  <!-- floor -->
+  <rect x="0" y="470" width="480" height="106" fill="#F0E6D6"/>
+  <rect x="0" y="470" width="480" height="6" fill="#D8C6A5"/>
+
+  <!-- doorway frame -->
+  <rect x="176" y="70" width="150" height="410" fill="#FFFFFF"/>
+  <rect x="176" y="70" width="150" height="410" fill="none" stroke="#D8C6A5" stroke-width="6"/>
+  <!-- door, slightly ajar -->
+  <path d="M186,86 L300,100 L300,468 L186,462 Z" fill="#1F7A7B"/>
+  <circle cx="284" cy="284" r="6" fill="#F0E6D6"/>
+
+  <!-- small entry table (interior, right) -->
+  <rect x="352" y="410" width="90" height="10" rx="4" fill="#C2AC85"/>
+  <rect x="360" y="420" width="8" height="50" fill="#C2AC85"/>
+  <rect x="426" y="420" width="8" height="50" fill="#C2AC85"/>
+  <path d="M366,392 L316,382 L316,410 L366,418 Z" fill="#FFFFFF"/>
+  <line x1="326" y1="394" x2="356" y2="399" stroke="#EADFC9" stroke-width="3"/>
+  <line x1="326" y1="402" x2="352" y2="406" stroke="#EADFC9" stroke-width="3"/>
+
+  <!-- teacher figure entering from left (exterior side) -->
+  <g>
+    <path d="M56,478 C80,462 132,462 156,480 L156,498 C132,508 80,508 56,498 Z" fill="#0F4142"/>
+    <rect x="66" y="362" width="102" height="122" rx="34" fill="#165B5C"/>
+    <path d="M66,392 C42,404 30,428 28,458" stroke="#165B5C" stroke-width="24" fill="none" stroke-linecap="round"/>
+    <circle cx="118" cy="332" r="33" fill="#E7C9A9"/>
+    <path d="M85,326 A33,33 0 0 1 151,326 L151,310 A33,27 0 0 0 85,310 Z" fill="#2F3A3A"/>
+    <!-- tote bag -->
+    <rect x="26" y="420" width="46" height="42" rx="8" fill="#D8C6A5"/>
+    <path d="M34,420 C34,404 64,404 64,420" stroke="#C2AC85" stroke-width="6" fill="none"/>
+  </g>
+
+  <!-- child figure greeting near table (interior side) -->
+  <g>
+    <path d="M356,486 C372,474 406,474 422,488 L422,500 C406,508 372,508 356,500 Z" fill="#C2AC85"/>
+    <rect x="362" y="410" width="70" height="80" rx="26" fill="#D8C6A5"/>
+    <circle cx="397" cy="386" r="23" fill="#E7C9A9"/>
+    <path d="M374,382 A23,23 0 0 1 420,382 L420,372 A23,19 0 0 0 374,372 Z" fill="#2F3A3A"/>
+    <!-- waving arm -->
+    <path d="M420,420 C438,410 448,392 446,372" stroke="#D8C6A5" stroke-width="16" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- soft rug interior -->
+  <ellipse cx="380" cy="500" rx="86" ry="20" fill="#EADFC9"/>
+</svg>

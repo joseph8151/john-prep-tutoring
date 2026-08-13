@@ -1,0 +1,64 @@
+<svg viewBox="0 0 480 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="원어민 선생님과 아이가 거실 러그에 앉아 그림책을 함께 보는 1:1 방문 영어수업 장면 일러스트">
+  <rect width="480" height="560" fill="#FAF7F0"/>
+
+  <!-- backdrop arch -->
+  <path d="M64,560 L64,236 A176,176 0 0 1 416,236 L416,560 Z" fill="#F0E6D6"/>
+
+  <!-- window -->
+  <g>
+    <rect x="46" y="86" width="86" height="104" rx="4" fill="#FAF7F0" stroke="#C2AC85" stroke-width="4"/>
+    <line x1="89" y1="86" x2="89" y2="190" stroke="#C2AC85" stroke-width="4"/>
+    <line x1="46" y1="138" x2="132" y2="138" stroke="#C2AC85" stroke-width="4"/>
+    <path d="M46,86 Q40,70 30,64" stroke="#D8C6A5" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M132,86 Q140,68 152,60" stroke="#D8C6A5" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- hanging plant top right -->
+  <g>
+    <line x1="404" y1="0" x2="404" y2="66" stroke="#C2AC85" stroke-width="3"/>
+    <ellipse cx="404" cy="80" rx="30" ry="18" fill="#8CA88C"/>
+    <ellipse cx="388" cy="72" rx="16" ry="10" fill="#7C9A7C"/>
+    <ellipse cx="420" cy="72" rx="16" ry="10" fill="#7C9A7C"/>
+  </g>
+
+  <!-- rug -->
+  <ellipse cx="240" cy="494" rx="198" ry="48" fill="#D8C6A5"/>
+  <ellipse cx="240" cy="494" rx="150" ry="34" fill="none" stroke="#C2AC85" stroke-width="3"/>
+
+  <!-- floor plant bottom right -->
+  <g>
+    <path d="M420,470 L448,470 L442,510 L426,510 Z" fill="#C2AC85"/>
+    <path d="M434,470 C420,440 414,412 434,392" stroke="#7C9A7C" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M434,470 C446,446 452,418 436,398" stroke="#8CA88C" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M434,466 C424,450 424,432 438,416" stroke="#7C9A7C" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- teacher figure (left) -->
+  <g>
+    <path d="M118,486 C140,470 190,470 214,488 L214,504 C190,514 140,514 118,504 Z" fill="#1F7A7B"/>
+    <rect x="128" y="380" width="96" height="112" rx="34" fill="#165B5C"/>
+    <path d="M214,404 C244,410 262,432 266,462" stroke="#165B5C" stroke-width="24" fill="none" stroke-linecap="round"/>
+    <circle cx="176" cy="352" r="32" fill="#E7C9A9"/>
+    <path d="M144,346 A32,32 0 0 1 208,346 L208,332 A32,26 0 0 0 144,332 Z" fill="#2F3A3A"/>
+  </g>
+
+  <!-- child figure (right) -->
+  <g>
+    <path d="M254,494 C270,482 306,482 322,496 L322,508 C306,516 270,516 254,508 Z" fill="#C2AC85"/>
+    <rect x="260" y="416" width="72" height="82" rx="26" fill="#D8C6A5"/>
+    <path d="M260,432 C240,438 228,452 224,470" stroke="#D8C6A5" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="296" cy="392" r="24" fill="#E7C9A9"/>
+    <path d="M272,388 A24,24 0 0 1 320,388 L320,378 A24,20 0 0 0 272,378 Z" fill="#2F3A3A"/>
+  </g>
+
+  <!-- open picture book between them -->
+  <g>
+    <path d="M180,470 L240,462 L240,504 L180,514 Z" fill="#FFFFFF"/>
+    <path d="M300,470 L240,462 L240,504 L300,514 Z" fill="#F6F1E7"/>
+    <line x1="240" y1="462" x2="240" y2="504" stroke="#D8C6A5" stroke-width="2"/>
+    <line x1="192" y1="478" x2="228" y2="474" stroke="#EADFC9" stroke-width="3"/>
+    <line x1="192" y1="488" x2="222" y2="485" stroke="#EADFC9" stroke-width="3"/>
+    <line x1="254" y1="474" x2="286" y2="478" stroke="#EADFC9" stroke-width="3"/>
+    <line x1="258" y1="486" x2="284" y2="489" stroke="#EADFC9" stroke-width="3"/>
+  </g>
+</svg>
