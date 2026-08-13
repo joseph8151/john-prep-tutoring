@@ -44,6 +44,13 @@
   }
   document.querySelectorAll('.reveal').forEach(observeReveal);
 
+  /* ---------- Click event tracking ---------- */
+  document.querySelectorAll('[data-track]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      track(el.getAttribute('data-track'), { label: el.getAttribute('data-track-label') || '' });
+    });
+  });
+
   /* ---------- Render: Recruiting areas ---------- */
   var areasEl = document.getElementById('recruitingAreasList');
   if (areasEl && Array.isArray(DATA.RECRUITING_AREAS)) {
