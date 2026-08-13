@@ -149,6 +149,9 @@ p{ margin:0; }
 .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:32px; }
 .hero-en{ font-family: var(--font-en); font-weight:700; font-size:1.15rem; color: var(--forest); }
 .hero-phone-line{ margin-top:22px; font-size:0.95rem; color: var(--text-secondary); }
+.hero-flow{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-bottom:26px; }
+.hero-flow span{ font-weight:700; font-size:0.8rem; color: var(--forest); }
+.hero-flow-arrow{ color: var(--sage-deep) !important; font-weight:400 !important; }
 .hero-phone-number{ font-family: var(--font-en); font-weight:700; color: var(--forest); }
 
 .trust-points{ display:flex; flex-wrap:wrap; gap:12px 22px; }
@@ -233,6 +236,19 @@ p{ margin:0; }
   font-weight:700; font-size:0.85rem; color: var(--forest); background: var(--white);
   padding:10px 20px; border-radius:30px; border: 1px solid rgba(23,63,53,0.14);
 }
+
+/* ==========================================================================
+   Needs path selector ("우리 아이는 어떤 수업이 필요할까요?")
+   ========================================================================== */
+.needs-path-grid{ display:grid; grid-template-columns: repeat(5, 1fr); gap:2px; background: rgba(23,63,53,0.12); border-radius: var(--radius-m); overflow:hidden; }
+.needs-path-card{
+  background: var(--white); padding: 30px 20px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px;
+  transition: background .15s ease;
+}
+.needs-path-card:hover{ background: var(--cream); }
+.needs-path-label{ font-weight:700; font-size:0.94rem; color: var(--forest); line-height:1.4; }
+.needs-path-sub{ font-family: var(--font-en); font-weight:600; font-size:0.76rem; color: var(--sage-deep); }
+.needs-path-arrow{ margin-top:4px; color: var(--forest); font-size:1.1rem; }
 
 /* ==========================================================================
    North American Native section
@@ -591,6 +607,7 @@ p{ margin:0; }
 @media (max-width: 1024px){
   .age-journey{ grid-template-columns: repeat(2, 1fr); }
   .style-summary-row{ grid-template-columns: 1fr; }
+  .needs-path-grid{ grid-template-columns: repeat(3, 1fr); }
   .why-grid{ grid-template-columns: repeat(2, 1fr); }
   .testimonial-grid{ grid-template-columns: repeat(2, 1fr); }
   .na-features{ grid-template-columns: 1fr 1fr; }
@@ -633,6 +650,7 @@ p{ margin:0; }
   .meet-steps{ flex-direction:column; gap:10px; }
   .meet-arrow{ transform: rotate(90deg); padding:2px 0; }
   .featured-faq-grid{ grid-template-columns: 1fr; }
+  .needs-path-grid{ grid-template-columns: 1fr 1fr; }
   .contact-split{ grid-template-columns: 1fr; }
 
   .form-grid{ grid-template-columns: 1fr; }

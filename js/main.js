@@ -113,6 +113,21 @@
     });
   }
 
+  /* ---------- Render: Needs path selector ---------- */
+  var needsPathGridEl = document.getElementById('needsPathGrid');
+  if (needsPathGridEl && Array.isArray(DATA.NEEDS_PATHS)) {
+    DATA.NEEDS_PATHS.forEach(function (p) {
+      var card = document.createElement('a');
+      card.className = 'needs-path-card';
+      card.href = p.anchor;
+      card.innerHTML =
+        '<span class="needs-path-label">' + p.label + '</span>' +
+        '<span class="needs-path-sub">' + p.sub + '</span>' +
+        '<span class="needs-path-arrow" aria-hidden="true">→</span>';
+      needsPathGridEl.appendChild(card);
+    });
+  }
+
   /* ---------- Render: Programs ---------- */
   var programListEl = document.getElementById('programList');
   if (programListEl && Array.isArray(DATA.PROGRAMS)) {

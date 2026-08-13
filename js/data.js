@@ -107,6 +107,15 @@ window.JOHN_PREP_DATA = {
     { name: "균형형", desc: "말하기와 활동, 리딩과 쓰기를 아이의 집중도와 수준에 맞춰 섞어서 진행합니다." }
   ],
 
+  // "우리 아이는 어떤 수업이 필요할까요?" self-identification paths. anchor must match a real section id on the page.
+  NEEDS_PATHS: [
+    { label: "영어를 처음 시작해요", sub: "첫 영어 · 놀이 · Speaking", anchor: "#curriculum" },
+    { label: "영어유치원을 준비해요", sub: "Pre-K 준비", anchor: "#prek-prep" },
+    { label: "파닉스·리딩을 시작하고 싶어요", sub: "Foundation", anchor: "#curriculum" },
+    { label: "초등 영어를 강화하고 싶어요", sub: "Reading · Writing · Academic", anchor: "#curriculum" },
+    { label: "학원 레벨테스트가 있어요", sub: "Test Preparation", anchor: "#level-test-prep" }
+  ],
+
   PROGRAMS: [
     { name: "파닉스 · 첫 읽기 (Phonics)", desc: "소리와 글자를 연결하는 첫 읽기 기초 수업." },
     { name: "말하기 (Speaking)", desc: "자연스러운 대화를 통한 말하기 연습." },
