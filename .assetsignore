@@ -1,0 +1,10 @@
+# Cloudflare 정적 배포에서 제외할 항목 (실제 사이트에 올라가지 않아야 하는 파일들)
+.git
+.github
+.claude
+api
+serve.ps1
+README.md
+wrangler.jsonc
+.assetsignore
+.gitignore

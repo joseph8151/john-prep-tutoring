@@ -76,3 +76,12 @@ Top Pages, 유입 경로, 기기별 통계, 전환 이벤트를 무료로 제공
 
 `phone_click`, `consultation_click`, `consultation_form_start`, `consultation_form_submit`,
 `program_view`, `tutor_profile_view`, `faq_open` (`page_view`는 GA4가 자동 수집)
+
+## ⚠️ 배포 규칙 (중요 — 사이트 충돌 방지)
+
+이 사이트는 **자기만의 Cloudflare 서버(Worker)** 에만 배포되어야 합니다.
+
+- 이 저장소의 Cloudflare Worker 이름 = **`john-prep-tutoring`** (`wrangler.jsonc` 참고)
+- **절대** `blossom-books` 등 다른 사이트의 서버에 배포하지 마세요. 이름이 겹치면 그 사이트를 덮어씁니다.
+- 대시보드에서 이 저장소를 Cloudflare 에 연결할 때, 새 프로젝트 이름을 반드시 `john-prep-tutoring` 로 두세요 (기존 프로젝트에 연결 ❌).
+- 도메인은 이 `john-prep-tutoring` 서버에만 연결하세요.
