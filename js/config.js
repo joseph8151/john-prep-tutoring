@@ -1,5 +1,5 @@
 /**
- * JOHN PREP TUTORING — Site Configuration
+ * 존프랩튜터링 — Site Configuration
  * Edit the values below to update contact info and analytics IDs across the entire site.
  * Do NOT hardcode phone numbers, prices, or IDs anywhere else in the codebase.
  */
@@ -17,7 +17,7 @@ window.JOHN_PREP_CONFIG = {
   TUTOR_APPLICATION_FORM_ACTION: "",
 
   // Business registration info — fill in when available. Left blank intentionally (never fabricate).
-  BUSINESS_NAME: "JOHN PREP TUTORING",
+  BUSINESS_NAME: "존프랩튜터링",
   BUSINESS_REG_NUMBER: "", // 사업자등록번호
   BUSINESS_ADDRESS: "서울시 서초구 반포대로18길 62",
   BUSINESS_EMAIL: "",      // 문의 이메일
@@ -28,6 +28,6 @@ window.JOHN_PREP_CONFIG = {
   BASE_LESSON_PRICE: 0,
 
   // Fixed multipliers for shared (group) lessons — applied to BASE_LESSON_PRICE, per-student
-  // cost drops as group size grows. Edit only if JOHN PREP's group pricing policy changes.
+  // cost drops as group size grows. Edit only if 존프랩튜터링's group pricing policy changes.
   GROUP_PRICING_MULTIPLIERS: { 1: 1.0, 2: 1.2, 3: 1.4, 4: 1.6 }
 };

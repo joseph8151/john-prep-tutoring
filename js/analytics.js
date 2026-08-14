@@ -1,5 +1,5 @@
 /**
- * JOHN PREP TUTORING — Analytics
+ * 존프랩튜터링 — Analytics
  * Thin wrapper around Google Analytics 4 (gtag.js). Loads GA4 only when a real
  * Measurement ID is set in js/config.js. Until then, trackEvent() no-ops safely
  * so the rest of the site never has to check whether analytics is configured.
@@ -25,7 +25,7 @@
     window.gtag('config', GA_ID, { anonymize_ip: true });
   } else {
     // eslint-disable-next-line no-console
-    console.info('[JOHN PREP] GA_MEASUREMENT_ID is not set in js/config.js — analytics events will be logged to console only.');
+    console.info('[존프랩] GA_MEASUREMENT_ID is not set in js/config.js — analytics events will be logged to console only.');
   }
 
   window.trackEvent = function (name, params) {

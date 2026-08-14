@@ -1,5 +1,5 @@
 /**
- * JOHN PREP TUTORING — Tutor Application handler (Vercel serverless function)
+ * 존프랩튜터링 — Tutor Application handler (Vercel serverless function)
  * Mirrors api/consultation.js. Sends a structured HTML email via Resend using the
  * same RESEND_API_KEY / CONTACT_EMAIL environment variables. Falls back to
  * Formspree client-side (see js/tutor-application.js) when not configured.
@@ -68,7 +68,7 @@ function buildHtml(d, receivedAt) {
   return '<!doctype html><html><body style="margin:0;padding:0;background:#F8F5EE;font-family:-apple-system,Segoe UI,Roboto,sans-serif;">' +
     '<table role="presentation" width="100%" style="max-width:600px;margin:0 auto;padding:32px 20px;">' +
     '<tr><td>' +
-    '<p style="font-family:Georgia,serif;font-weight:700;font-size:12px;letter-spacing:0.1em;color:#173F35;margin:0 0 4px;">JOHN PREP TUTORING</p>' +
+    '<p style="font-family:Georgia,serif;font-weight:700;font-size:12px;letter-spacing:0.1em;color:#173F35;margin:0 0 4px;">존프랩튜터링</p>' +
     '<h1 style="font-size:20px;color:#173F35;margin:0 0 4px;">NEW TUTOR APPLICATION</h1>' +
     '<p style="font-size:12px;color:#5C6560;margin:0 0 8px;">Submitted: ' + esc(receivedAt) + '</p>' +
     '<table role="presentation" width="100%" style="border-collapse:collapse;">' + rows.join('') + '</table>' +
@@ -114,9 +114,9 @@ module.exports = async function handler(req, res) {
       method: 'POST',
       headers: { 'Authorization': 'Bearer ' + RESEND_API_KEY, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        from: 'JOHN PREP TUTORING <onboarding@resend.dev>',
+        from: '존프랩튜터링 <onboarding@resend.dev>',
         to: [CONTACT_EMAIL],
-        subject: '[JOHN PREP Tutor Application] ' + (d.name || 'Unnamed') + ' / ' + (d.city || ''),
+        subject: '[존프랩 Tutor Application] ' + (d.name || 'Unnamed') + ' / ' + (d.city || ''),
         html: buildHtml(d, receivedAt),
         reply_to: d.email || undefined
       })

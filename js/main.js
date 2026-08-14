@@ -260,7 +260,7 @@
   var footerBusinessEl = document.getElementById('footerBusiness');
   if (footerBusinessEl) {
     var bizLines = [];
-    bizLines.push(CONFIG.BUSINESS_NAME || 'JOHN PREP TUTORING');
+    bizLines.push(CONFIG.BUSINESS_NAME || '존프랩튜터링');
     if (CONFIG.BUSINESS_REG_NUMBER) bizLines.push('사업자등록번호 ' + CONFIG.BUSINESS_REG_NUMBER);
     if (CONFIG.BUSINESS_ADDRESS) bizLines.push(CONFIG.BUSINESS_ADDRESS);
     footerBusinessEl.innerHTML = '<p>' + bizLines.join(' · ') + '</p>';

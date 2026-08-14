@@ -1,5 +1,5 @@
 /**
- * JOHN PREP TUTORING — Tutor Application Page Data
+ * 존프랩튜터링 — Tutor Application Page Data
  * Option lists for the Become a Tutor application form. Edit freely.
  */
 window.JOHN_PREP_TUTOR_DATA = {
@@ -26,11 +26,11 @@ window.JOHN_PREP_TUTOR_DATA = {
   ],
 
   FAQ: [
-    { q: "Do I need to be a U.S. or Canadian citizen?", a: "No. Citizenship itself is not the deciding criterion. JOHN PREP looks for tutors with native or fully native-level North American English and strong suitability for teaching children." },
+    { q: "Do I need to be a U.S. or Canadian citizen?", a: "No. Citizenship itself is not the deciding criterion. 존프랩 looks for tutors with native or fully native-level North American English and strong suitability for teaching children." },
     { q: "I'm Korean-American / Korean-Canadian. Can I apply?", a: "Absolutely. If English is your native or dominant language and you communicate naturally at a native level, we welcome your application." },
     { q: "Do I need to speak Korean?", a: "Not necessarily. Korean ability can be helpful in some situations, but it is not required for most English tutoring roles." },
     { q: "Do I need teaching experience?", a: "Relevant teaching, tutoring, or childcare experience is preferred. Strong candidates with excellent communication skills and experience working with children may still be considered." },
-    { q: "Are lessons online or in person?", a: "JOHN PREP primarily provides in-home tutoring. Availability and lesson opportunities depend on location." },
-    { q: "Can I choose which students I teach?", a: "You can tell JOHN PREP your preferred ages, subjects, areas, schedule and lesson style. We only contact you when a potentially suitable match becomes available." }
+    { q: "Are lessons online or in person?", a: "존프랩 primarily provides in-home tutoring. Availability and lesson opportunities depend on location." },
+    { q: "Can I choose which students I teach?", a: "You can tell 존프랩 your preferred ages, subjects, areas, schedule and lesson style. We only contact you when a potentially suitable match becomes available." }
   ]
 };

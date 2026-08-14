@@ -3,7 +3,7 @@
   <circle cx="-40" cy="-80" r="310" fill="rgba(169,185,165,0.14)"/>
   <circle cx="1280" cy="740" r="260" fill="rgba(234,228,216,0.08)"/>
 
-  <text x="90" y="150" font-family="Arial, sans-serif" font-weight="800" font-size="40" fill="#FFFFFF" letter-spacing="-0.5">JOHN PREP<tspan font-weight="700" font-size="17" fill="#A9B9A5" dx="14" dy="-2" letter-spacing="3">TUTORING</tspan></text>
+  <text x="90" y="150" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', Arial, sans-serif" font-weight="800" font-size="40" fill="#FFFFFF" letter-spacing="-0.5">존프랩튜터링</text>
 
   <rect x="90" y="190" width="470" height="52" rx="26" fill="#EAE4D8"/>
   <text x="115" y="224" font-family="Arial, sans-serif" font-weight="800" font-size="21" fill="#173F35">100% North American Native Teachers</text>
