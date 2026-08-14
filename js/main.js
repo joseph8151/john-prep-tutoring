@@ -6,6 +6,27 @@
   var FORM_OPTIONS = DATA.FORM_OPTIONS || {};
   var track = window.trackEvent || function () {};
 
+  /* ---------- Structured data (SEO) — built only from real js/config.js values ---------- */
+  (function injectStructuredData() {
+    var data = {
+      '@context': 'https://schema.org',
+      '@type': 'EducationalOrganization',
+      name: CONFIG.BUSINESS_NAME || 'JOHN PREP TUTORING',
+      url: 'https://www.johnpreptutoring.xyz/',
+      description: '만 2세부터 시작하는 미국·캐나다 출신 원어민 1:1 방문 영어수업. 학생의 연령, 영어 수준과 성향에 맞는 Native English Tutor를 매칭하는 프라이빗 튜터링 서비스.',
+      areaServed: 'KR'
+    };
+    if ((CONFIG.CONTACT_PHONE || '').trim()) data.telephone = CONFIG.CONTACT_PHONE.trim();
+    if ((CONFIG.BUSINESS_ADDRESS || '').trim()) {
+      data.address = { '@type': 'PostalAddress', streetAddress: CONFIG.BUSINESS_ADDRESS.trim(), addressCountry: 'KR' };
+    }
+    if ((CONFIG.BUSINESS_EMAIL || '').trim()) data.email = CONFIG.BUSINESS_EMAIL.trim();
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(data);
+    document.head.appendChild(script);
+  })();
+
   /* ---------- Sticky header shadow ---------- */
   var header = document.getElementById('siteHeader');
   function onScroll() {
