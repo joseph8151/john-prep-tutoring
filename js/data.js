@@ -109,10 +109,10 @@ window.JOHN_PREP_DATA = {
 
   // "우리 아이는 어떤 수업이 필요할까요?" self-identification paths. anchor must match a real section id on the page.
   NEEDS_PATHS: [
-    { label: "영어를 처음 시작해요", sub: "첫 영어 · 놀이 · Speaking", anchor: "#curriculum" },
+    { label: "영어를 처음 시작해요", sub: "첫 영어 · 놀이 · Speaking", anchor: "#programs" },
     { label: "영어유치원을 준비해요", sub: "Pre-K 준비", anchor: "#prek-prep" },
-    { label: "파닉스·리딩을 시작하고 싶어요", sub: "Foundation", anchor: "#curriculum" },
-    { label: "초등 영어를 강화하고 싶어요", sub: "Reading · Writing · Academic", anchor: "#curriculum" },
+    { label: "파닉스·리딩을 시작하고 싶어요", sub: "Foundation", anchor: "#programs" },
+    { label: "초등 영어를 강화하고 싶어요", sub: "Reading · Writing · Academic", anchor: "#programs" },
     { label: "학원 레벨테스트가 있어요", sub: "Test Preparation", anchor: "#level-test-prep" }
   ],
 
@@ -127,6 +127,151 @@ window.JOHN_PREP_DATA = {
     { name: "국제학교 준비", desc: "국제학교 입학과 적응을 위한 준비 수업." },
     { name: "학교 수업 서포트", desc: "학교 진도와 과제를 함께 챙기는 서포트 수업." },
     { name: "맞춤형 통합 프로그램", desc: "위 영역을 조합한 맞춤형 커리큘럼." }
+  ],
+
+  // ---------------------------------------------------------------------
+  // Parent Problem — what a parent would otherwise have to verify alone
+  // before trusting a native tutor with their child.
+  // ---------------------------------------------------------------------
+  PARENT_CHECK_POINTS: [
+    "출신 국가는 어디인지",
+    "유아 수업 경험이 있는지",
+    "우리 아이 성향과 잘 맞는지",
+    "Phonics를 가르칠 수 있는지",
+    "학습형 수업도 가능한지",
+    "시간 약속을 잘 지키는지",
+    "오랫동안 수업할 수 있는지",
+    "Speaking 위주인지 Academic English까지 가능한지"
+  ],
+
+  // ---------------------------------------------------------------------
+  // JOHN PREP vs. a typical tutor-search platform — objective comparison,
+  // not a sales pitch.
+  // ---------------------------------------------------------------------
+  COMPARISON: {
+    typical: {
+      label: "TYPICAL TUTOR PLATFORM",
+      items: [
+        "Search dozens of profiles",
+        "Contact tutors individually",
+        "Check schedules yourself",
+        "Compare experience yourself",
+        "Coordinate everything yourself"
+      ]
+    },
+    johnPrep: {
+      label: "JOHN PREP TUTORING",
+      items: [
+        "One Parent Consultation",
+        "Student Profile Analysis",
+        "Tutor Screening",
+        "Personalized Matching",
+        "Tutor Profile Introduction",
+        "Sample Lesson",
+        "Ongoing Matching Support"
+      ]
+    }
+  },
+
+  // ---------------------------------------------------------------------
+  // The JOHN PREP Standard — 6-step tutor review & matching process.
+  // Reflects only what JOHN PREP actually reviews — never add unverified
+  // checks (e.g. criminal background checks, certification verification).
+  // ---------------------------------------------------------------------
+  STANDARD_STEPS: [
+    { num: "01", title: "Native English Background", desc: "미국·캐나다 등 영어권 교육 및 생활 배경을 확인합니다." },
+    { num: "02", title: "Education & Experience Review", desc: "학력, 교육 경험, Tutor Experience, 유아 및 초등 수업 경험 등을 검토합니다." },
+    { num: "03", title: "Tutor Interview", desc: "Communication, Professionalism, Teaching Style 등을 확인합니다." },
+    { num: "04", title: "Age & Goal Matching", desc: "유아, Phonics, Reading, Speaking, Writing, Academic English 등 학생의 목적에 적합한지를 확인합니다." },
+    { num: "05", title: "Location & Schedule", desc: "방문 가능 지역과 실제 수업 가능한 일정을 확인합니다." },
+    { num: "06", title: "Parent Introduction", desc: "수업 전 학부모에게 Tutor의 주요 Profile을 안내합니다." }
+  ],
+
+  // ---------------------------------------------------------------------
+  // Sample tutor profile sheet — mockup format shown before the first lesson.
+  // isSample:true — replaced with the real matched tutor's info per family;
+  // never presented site-wide as if it were an actual profile.
+  // ---------------------------------------------------------------------
+  PROFILE_SHEET_SAMPLE: {
+    isSample: true,
+    name: "Emily S.",
+    nationality: "Toronto, Canada",
+    education: "B.Ed., Early Childhood Education",
+    experience: "6+ Years Teaching Experience",
+    ageSpecialization: "Ages 3–7",
+    teachingStyle: "Warm · Patient · Interactive",
+    lessonFocus: "Phonics · Reading · Speaking · Kindergarten Prep",
+    schedule: "상담을 통해 확인 (Confirmed After Consultation)"
+  },
+
+  // ---------------------------------------------------------------------
+  // Programs — 4 age/goal categories, the primary program structure.
+  // ---------------------------------------------------------------------
+  PROGRAM_CATEGORIES: [
+    {
+      num: "01",
+      tag: "LITTLE LEARNERS",
+      title: "Little Learners",
+      range: "Ages 2–4",
+      skills: ["Play", "Songs", "Picture Books", "First Words", "Listening", "Simple Speaking"],
+      desc: "영어를 공부로 시작하기보다 자연스럽게 듣고 반응하며 영어에 익숙해지는 단계입니다."
+    },
+    {
+      num: "02",
+      tag: "KINDERGARTEN READY",
+      title: "Kindergarten Ready",
+      range: "Ages 4–7",
+      skills: ["Speaking", "Phonics", "Reading", "Classroom English", "Vocabulary"],
+      desc: "영어유치원 입학 전 또는 재원 중 필요한 기초 영어 능력을 균형 있게 준비합니다."
+    },
+    {
+      num: "03",
+      tag: "ELEMENTARY ENGLISH",
+      title: "Elementary English",
+      range: "Grades 1–6",
+      skills: ["Reading", "Writing", "Vocabulary", "Grammar", "Speaking", "Academic English"],
+      desc: "단순 회화를 넘어 Reading과 Writing까지 포함한 학습형 영어로 확장합니다."
+    },
+    {
+      num: "04",
+      tag: "LEVEL TEST PREP",
+      title: "Level Test Prep",
+      range: "Academy / School Admission &amp; Advancement",
+      skills: ["Reading", "Vocabulary", "Grammar", "Writing", "Listening", "Speaking", "Interview"],
+      desc: "지원하는 교육기관 또는 목표 평가의 주요 영역을 확인하여 학생 수준에 맞춰 준비합니다."
+    }
+  ],
+
+  // ---------------------------------------------------------------------
+  // Pre-K / Kindergarten prep — situations this program fits.
+  // ---------------------------------------------------------------------
+  PREK_FIT_POINTS: [
+    "영어유치원 입학 전 영어 노출이 부족한 경우",
+    "원어민과 대화할 때 긴장하는 경우",
+    "영어 지시를 이해하는 연습이 필요한 경우",
+    "Phonics를 처음 시작하는 경우",
+    "Picture Book Reading을 시작하고 싶은 경우",
+    "영어유치원 입학 전 Speaking을 강화하고 싶은 경우"
+  ],
+
+  // ---------------------------------------------------------------------
+  // Level Test Prep — 5-step preparation process.
+  // ---------------------------------------------------------------------
+  LEVEL_TEST_PROCESS: [
+    { num: "01", title: "Goal Analysis", desc: "지원하려는 교육기관과 목표 확인" },
+    { num: "02", title: "Current Level", desc: "Reading / Vocabulary / Writing / Speaking 등 현재 수준 확인" },
+    { num: "03", title: "Priority Areas", desc: "집중적으로 보완해야 할 영역 선정" },
+    { num: "04", title: "Targeted Practice", desc: "유형별 연습 및 Skill Training" },
+    { num: "05", title: "Native Interview Practice", desc: "필요한 경우 Native Tutor와 Speaking / Interview Practice" }
+  ],
+
+  // ---------------------------------------------------------------------
+  // Lesson Experience — general flow. Actual composition varies by the
+  // student's age and goals; see the age-based note shown alongside it.
+  // ---------------------------------------------------------------------
+  LESSON_FLOW: [
+    "Warm-up Conversation", "Today's Topic", "Vocabulary", "Picture Book / Reading",
+    "Speaking Practice", "Phonics / Writing Activity", "Review", "Home Practice"
   ],
 
   PARENT_CONCERNS: [
@@ -163,6 +308,7 @@ window.JOHN_PREP_DATA = {
     { q: "선생님 정보를 수업 전에 알 수 있나요?", a: "매칭 완료 후 가능한 범위에서 Tutor의 출신 국가, 주요 경력, Teaching Experience, 전문 영역 및 수업 스타일 등을 안내합니다." },
     { q: "수업은 어디에서 하나요?", a: "기본적으로 학생의 자택에서 진행하는 1:1 방문수업입니다." },
     { q: "유아도 책상에 앉아서 수업하나요?", a: "연령에 따라 수업 방식이 달라집니다. 어린 학생은 놀이, 그림책, 대화 등 Interactive Activity 비중을 높이고 연령이 올라갈수록 Reading, Writing 및 Academic Learning 비중을 확대합니다." },
+    { q: "유아도 한 시간 수업하나요?", a: "아이의 나이와 집중 시간에 따라 적절한 수업시간을 상담합니다. 어린 연령일수록 짧은 시간을 놀이와 활동으로 나누어 진행하는 경우가 많고, 아이가 수업에 익숙해지면 시간을 조정할 수 있습니다." },
     { q: "국제학교 학생도 가능한가요?", a: "가능합니다. 학생 수준과 필요에 따라 Reading, Writing, Speaking, Vocabulary, Grammar 및 Academic English 수업으로 구성할 수 있습니다." },
     { q: "특정 성별이나 스타일의 선생님을 요청할 수 있나요?", a: "네. 상담 시 미국/캐나다 출신, 성별, 밝고 활발한 스타일, 차분한 스타일, 어린아이 경험, Academic 성향 등 원하는 조건을 자유롭게 말씀해주시면 학부모 요청사항과 실제 Tutor Availability를 함께 고려하여 매칭합니다." },
     { q: "수업은 어떤 방식으로 진행되나요?", a: "정해진 하나의 방식으로 모든 아이에게 동일하게 진행하지 않습니다. 매니저 상담을 통해 아이의 나이, 현재 영어 수준, 학습 경험, 성향, 학습 목표를 먼저 확인한 뒤 그에 맞는 Tutor와 수업 방식을 안내합니다. One child. One level. One personalized lesson." },

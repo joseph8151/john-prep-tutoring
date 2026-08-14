@@ -139,6 +139,130 @@
     });
   }
 
+  /* ---------- Render: Parent check points (Parent Problem section) ---------- */
+  var parentCheckListEl = document.getElementById('parentCheckList');
+  if (parentCheckListEl && Array.isArray(DATA.PARENT_CHECK_POINTS)) {
+    DATA.PARENT_CHECK_POINTS.forEach(function (point) {
+      var li = document.createElement('li');
+      li.textContent = point;
+      parentCheckListEl.appendChild(li);
+    });
+  }
+
+  /* ---------- Render: Comparison (Typical Platform vs. JOHN PREP) ---------- */
+  var compareTypicalEl = document.getElementById('compareTypicalList');
+  var compareJohnPrepEl = document.getElementById('compareJohnPrepList');
+  if (compareTypicalEl && compareJohnPrepEl && DATA.COMPARISON) {
+    (DATA.COMPARISON.typical.items || []).forEach(function (item) {
+      var li = document.createElement('li');
+      li.textContent = item;
+      compareTypicalEl.appendChild(li);
+    });
+    (DATA.COMPARISON.johnPrep.items || []).forEach(function (item) {
+      var li = document.createElement('li');
+      li.textContent = item;
+      compareJohnPrepEl.appendChild(li);
+    });
+  }
+
+  /* ---------- Render: The JOHN PREP Standard (6-step grid) ---------- */
+  var standardGridEl = document.getElementById('standardGrid');
+  if (standardGridEl && Array.isArray(DATA.STANDARD_STEPS)) {
+    DATA.STANDARD_STEPS.forEach(function (step) {
+      var card = document.createElement('div');
+      card.className = 'standard-step';
+      card.innerHTML =
+        '<span class="standard-step-num">' + step.num + '</span>' +
+        '<h3>' + step.title + '</h3>' +
+        '<p>' + step.desc + '</p>';
+      standardGridEl.appendChild(card);
+    });
+  }
+
+  /* ---------- Render: Tutor Profile Sheet (sample mockup) ---------- */
+  var profileSheetEl = document.getElementById('profileSheet');
+  if (profileSheetEl && DATA.PROFILE_SHEET_SAMPLE) {
+    var sheet = DATA.PROFILE_SHEET_SAMPLE;
+    var rows = [
+      ['Education', sheet.education],
+      ['Teaching Experience', sheet.experience],
+      ['Age Specialization', sheet.ageSpecialization],
+      ['Teaching Style', sheet.teachingStyle],
+      ['Lesson Focus', sheet.lessonFocus],
+      ['Available Schedule', sheet.schedule]
+    ];
+    var rowsHtml = rows.map(function (r) {
+      return '<div class="profile-sheet-row"><dt>' + r[0] + '</dt><dd>' + r[1] + '</dd></div>';
+    }).join('');
+    profileSheetEl.innerHTML =
+      '<div class="profile-sheet-head">' +
+        '<div><p class="profile-sheet-eyebrow">JOHN PREP TUTOR PROFILE SHEET</p>' +
+        '<p class="profile-sheet-name">' + sheet.name + '</p>' +
+        '<p class="profile-sheet-sub">' + sheet.nationality + '</p></div>' +
+        (sheet.isSample ? '<span class="profile-sheet-badge">SAMPLE FORMAT</span>' : '') +
+      '</div>' +
+      '<dl class="profile-sheet-body">' + rowsHtml + '</dl>' +
+      '<div class="profile-sheet-foot">실제 매칭 후에는 상담을 통해 확인된 Tutor의 Profile Sheet가 안내됩니다.</div>';
+  }
+
+  /* ---------- Render: Programs (4-category grid) ---------- */
+  var programCatGridEl = document.getElementById('programCatGrid');
+  if (programCatGridEl && Array.isArray(DATA.PROGRAM_CATEGORIES)) {
+    DATA.PROGRAM_CATEGORIES.forEach(function (cat) {
+      var card = document.createElement('div');
+      card.className = 'program-cat';
+      var skillsHtml = (cat.skills || []).map(function (s) { return '<span>' + s + '</span>'; }).join('');
+      card.innerHTML =
+        '<span class="program-cat-num">' + cat.num + ' · ' + cat.tag + '</span>' +
+        '<h3>' + cat.title + '</h3>' +
+        '<span class="program-cat-range">' + cat.range + '</span>' +
+        '<div class="program-cat-skills">' + skillsHtml + '</div>' +
+        '<p>' + cat.desc + '</p>';
+      programCatGridEl.appendChild(card);
+    });
+  }
+
+  /* ---------- Render: Pre-K fit checklist ---------- */
+  var prekFitListEl = document.getElementById('prekFitList');
+  if (prekFitListEl && Array.isArray(DATA.PREK_FIT_POINTS)) {
+    DATA.PREK_FIT_POINTS.forEach(function (point) {
+      var li = document.createElement('li');
+      li.textContent = point;
+      prekFitListEl.appendChild(li);
+    });
+  }
+
+  /* ---------- Render: Level Test Prep process (5 steps) ---------- */
+  var levelTestProcessEl = document.getElementById('levelTestProcessList');
+  if (levelTestProcessEl && Array.isArray(DATA.LEVEL_TEST_PROCESS)) {
+    DATA.LEVEL_TEST_PROCESS.forEach(function (step) {
+      var item = document.createElement('div');
+      item.className = 'process-item';
+      item.innerHTML =
+        '<span class="process-num">' + step.num + '</span>' +
+        '<div><h3>' + step.title + '</h3><p>' + step.desc + '</p></div>';
+      levelTestProcessEl.appendChild(item);
+    });
+  }
+
+  /* ---------- Render: Lesson Experience flow (chip sequence) ---------- */
+  var lessonFlowEl = document.getElementById('lessonFlowSteps');
+  if (lessonFlowEl && Array.isArray(DATA.LESSON_FLOW)) {
+    DATA.LESSON_FLOW.forEach(function (step, i) {
+      var span = document.createElement('span');
+      span.className = 'meet-step';
+      span.textContent = step;
+      lessonFlowEl.appendChild(span);
+      if (i < DATA.LESSON_FLOW.length - 1) {
+        var arrow = document.createElement('span');
+        arrow.className = 'meet-arrow';
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.textContent = '→';
+        lessonFlowEl.appendChild(arrow);
+      }
+    });
+  }
+
   /* ---------- Render: Service Areas (3-tier) ---------- */
   var serviceAreaEl = document.getElementById('serviceAreaList');
   if (serviceAreaEl && Array.isArray(DATA.SERVICE_AREAS)) {

@@ -18,6 +18,7 @@
   --container-w: 1180px;
   --radius-s: 4px;
   --radius-m: 8px;
+  --radius-btn: 7px;
   --header-h: 76px;
 }
 
@@ -44,12 +45,13 @@ p{ margin:0; }
 .accent{ color: var(--forest); }
 .text-white{ color: var(--white); }
 .text-white-70{ color: rgba(255,255,255,0.74); }
+.text-sage{ color: var(--sage); }
 
 /* ---- Buttons ---- */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   padding: 13px 26px;
-  border-radius: var(--radius-s);
+  border-radius: var(--radius-btn);
   font-weight:600; font-size: 0.95rem;
   border: 1.5px solid transparent;
   transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
@@ -57,6 +59,9 @@ p{ margin:0; }
 }
 .btn-primary{ background: var(--forest); color: var(--white); }
 .btn-primary:hover{ background: var(--forest-light); transform: translateY(-1px); }
+/* On a forest-green section, a forest-green primary button loses its shape — swap to sage for contrast. */
+.section--forest .btn-primary{ background: var(--sage); color: var(--forest); }
+.section--forest .btn-primary:hover{ background: var(--white); }
 .btn-ghost{ background: transparent; color: var(--forest); border-color: rgba(23,63,53,0.22); }
 .btn-ghost:hover{ border-color: var(--forest); }
 .btn-outline-forest{ background: transparent; color: var(--forest); border-color: var(--forest); }
@@ -111,7 +116,7 @@ p{ margin:0; }
   max-height:0; overflow:hidden; transition: max-height .3s ease;
   background: var(--cream); border-top: 1px solid rgba(23,63,53,0.1);
 }
-.mobile-nav.is-open{ max-height: 480px; }
+.mobile-nav.is-open{ max-height: 640px; }
 .mobile-nav a{ padding:14px 28px; font-weight:600; border-bottom: 1px solid rgba(23,63,53,0.08); }
 .mobile-nav-phone-block{
   display:flex; justify-content:space-between; align-items:center;
@@ -138,8 +143,11 @@ p{ margin:0; }
 .eyebrow{
   font-family: var(--font-en); font-weight:700; font-size:0.86rem;
   color: var(--forest); margin:0 0 16px;
+  display:inline-flex; align-items:center; gap:10px;
 }
+.eyebrow::before{ content:''; display:inline-block; width:26px; height:1px; background: var(--sage-deep); }
 .eyebrow--light{ color: rgba(255,255,255,0.8); }
+.eyebrow--light::before{ background: rgba(255,255,255,0.45); }
 .hero h1{ font-size: clamp(1.7rem, 2.6vw, 2.15rem); font-weight:700; line-height:1.32; letter-spacing:-0.005em; margin-bottom:16px; color: var(--forest); }
 .hero-badge{
   display:inline-block; font-family: var(--font-en); font-weight:800; font-size:0.82rem; letter-spacing:0.04em;
@@ -176,6 +184,8 @@ p{ margin:0; }
 }
 .ph-photo--hero{ aspect-ratio: 4/4.6; }
 .ph-photo--tall{ aspect-ratio: 4/4.8; }
+.ph-photo--wide{ aspect-ratio: 16/10; }
+.ph-photo--square{ aspect-ratio: 1/1.02; }
 .ph-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
 .ph-caption{
   position:relative; z-index:2; padding:22px 26px; font-family: var(--font-en);
@@ -183,18 +193,21 @@ p{ margin:0; }
 }
 
 /* ==========================================================================
-   Trust bar (badge row)
+   Trust bar — "JOHN PREP AT A GLANCE" editorial glance row
    ========================================================================== */
-.trust-bar{ background: var(--white); border-top: 1px solid rgba(23,63,53,0.1); border-bottom: 1px solid rgba(23,63,53,0.1); padding: 20px 0; }
-.trust-bar-inner{ display:flex; flex-wrap:wrap; justify-content:center; gap: 12px 36px; }
-.trust-bar-inner span{
-  font-family: var(--font-en); font-weight:700; font-size:0.78rem; letter-spacing:0.03em;
-  color: var(--forest); padding-left:18px; position:relative;
+.trust-bar{ background: var(--white); border-top: 1px solid rgba(23,63,53,0.1); border-bottom: 1px solid rgba(23,63,53,0.1); padding: 40px 0; }
+.glance-eyebrow{
+  display:block; text-align:center; font-family: var(--font-en); font-weight:800; font-size:0.72rem;
+  letter-spacing:0.12em; color: var(--sage-deep); margin-bottom:26px;
 }
-.trust-bar-inner span::before{
-  content:''; position:absolute; left:0; top:50%; transform:translateY(-50%);
-  width:6px; height:6px; border-radius:50%; background: var(--sage-deep);
+.glance-grid{ display:flex; flex-wrap:wrap; }
+.glance-item{
+  flex: 1 1 150px; text-align:center; padding: 0 18px;
+  border-left: 1px solid rgba(23,63,53,0.12);
 }
+.glance-item:first-child{ border-left:none; }
+.glance-value{ display:block; font-family: var(--font-en); font-weight:800; font-size:1rem; letter-spacing:0.01em; color: var(--forest); line-height:1.3; }
+.glance-label{ display:block; margin-top:6px; font-size:0.78rem; color: var(--text-secondary); line-height:1.4; }
 
 /* ==========================================================================
    Sections — generic
@@ -236,6 +249,69 @@ p{ margin:0; }
   font-weight:700; font-size:0.85rem; color: var(--forest); background: var(--white);
   padding:10px 20px; border-radius:30px; border: 1px solid rgba(23,63,53,0.14);
 }
+
+/* ==========================================================================
+   The JOHN PREP Standard — 6-step review grid
+   ========================================================================== */
+.standard-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:2px; background: rgba(23,63,53,0.12); border-radius: var(--radius-m); overflow:hidden; }
+.standard-step{ background: var(--white); padding: 34px 30px; }
+.standard-step-num{ display:block; font-family: var(--font-en); font-weight:800; font-size:1.5rem; color: var(--sage-deep); margin-bottom:14px; }
+.standard-step h3{ font-size:1.02rem; margin-bottom:10px; line-height:1.35; }
+.standard-step p{ font-size:0.87rem; color: var(--text-secondary); line-height:1.7; }
+
+/* ==========================================================================
+   Comparison — Typical Tutor Platform vs. JOHN PREP
+   ========================================================================== */
+.compare-wrap{
+  display:grid; grid-template-columns: 1fr auto 1fr; align-items:stretch;
+  max-width:920px; margin:0 auto; border: 1px solid rgba(23,63,53,0.14); border-radius: var(--radius-m); overflow:hidden;
+}
+.compare-col{ padding: 38px 34px; }
+.compare-col--typical{ background: var(--cream); }
+.compare-col--johnprep{ background: var(--forest); }
+.compare-vs{
+  display:flex; align-items:center; justify-content:center; padding:0 18px;
+  background: var(--white); font-family: var(--font-en); font-weight:800; font-size:0.8rem;
+  color: var(--sage-deep); letter-spacing:0.04em;
+}
+.compare-label{ font-family: var(--font-en); font-weight:800; font-size:0.72rem; letter-spacing:0.06em; margin-bottom:20px; }
+.compare-col--typical .compare-label{ color: var(--sage-deep); }
+.compare-col--johnprep .compare-label{ color: var(--sage); }
+.compare-list{ display:flex; flex-direction:column; gap:13px; }
+.compare-list li{ font-size:0.92rem; padding-left:22px; position:relative; line-height:1.5; }
+.compare-col--typical .compare-list li{ color: var(--text-secondary); }
+.compare-col--typical .compare-list li::before{ content:'\2013'; position:absolute; left:0; top:0; color: var(--sage-deep); font-weight:700; }
+.compare-col--johnprep .compare-list li{ color: rgba(255,255,255,0.92); }
+.compare-col--johnprep .compare-list li::before{ content:'\2713'; position:absolute; left:0; top:0; color: var(--sage); font-weight:800; }
+
+/* ==========================================================================
+   Tutor Profile Sheet — mockup document shown before the first lesson
+   ========================================================================== */
+.profile-sheet{ max-width:640px; margin:0 auto; background: var(--white); border: 1px solid rgba(23,63,53,0.16); border-radius: var(--radius-m); overflow:hidden; }
+.profile-sheet-head{ background: var(--forest); padding: 24px 34px; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+.profile-sheet-eyebrow{ font-family: var(--font-en); font-weight:800; font-size:0.66rem; letter-spacing:0.1em; color: var(--sage); margin-bottom:8px; }
+.profile-sheet-name{ font-family: var(--font-en); font-weight:800; font-size:1.3rem; color: var(--white); }
+.profile-sheet-sub{ font-size:0.86rem; color: rgba(255,255,255,0.65); margin-top:3px; }
+.profile-sheet-badge{ align-self:flex-start; font-family: var(--font-en); font-weight:700; font-size:0.66rem; letter-spacing:0.06em; color: var(--forest); background: var(--sage); padding:6px 13px; border-radius:20px; white-space:nowrap; }
+.profile-sheet-body{ padding: 32px 34px; display:grid; grid-template-columns: 1fr 1fr; gap: 22px 30px; }
+.profile-sheet-row{ border-top: 1px solid rgba(23,63,53,0.1); padding-top:12px; }
+.profile-sheet-row:nth-child(-n+2){ border-top:none; padding-top:0; }
+.profile-sheet-row--full{ grid-column: 1 / -1; }
+.profile-sheet-row dt{ font-family: var(--font-en); font-weight:700; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color: var(--sage-deep); margin-bottom:5px; }
+.profile-sheet-row dd{ margin:0; font-size:0.92rem; color: var(--charcoal); line-height:1.5; }
+.profile-sheet-foot{ padding: 16px 34px; border-top: 1px solid rgba(23,63,53,0.1); background: var(--cream); font-size:0.78rem; color: var(--text-secondary); text-align:center; }
+
+/* ==========================================================================
+   Programs — 4 category grid
+   ========================================================================== */
+.program-cat-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:2px; background: rgba(23,63,53,0.12); border-radius: var(--radius-m); overflow:hidden; }
+.program-cat{ background: var(--white); padding: 38px 36px; }
+.program-cat-num{ display:block; font-family: var(--font-en); font-weight:800; font-size:0.72rem; letter-spacing:0.08em; color: var(--sage-deep); margin-bottom:12px; }
+.program-cat h3{ font-size:1.2rem; margin-bottom:4px; }
+.program-cat-range{ display:block; font-family: var(--font-en); font-weight:700; font-size:0.84rem; color: var(--forest); margin-bottom:18px; }
+.program-cat-skills{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:18px; }
+.program-cat-skills span{ font-size:0.76rem; font-weight:600; color: var(--forest); background: var(--cream); padding:5px 12px; border-radius:14px; }
+.program-cat p{ font-size:0.89rem; color: var(--text-secondary); line-height:1.7; }
 
 /* ==========================================================================
    Needs path selector ("우리 아이는 어떤 수업이 필요할까요?")
@@ -412,6 +488,9 @@ p{ margin:0; }
   max-width:520px; margin: 28px auto 0; background: var(--cream); border-radius: var(--radius-m);
   padding: 30px 32px; display:flex; flex-direction:column; gap:16px;
 }
+.feedback-meta{ display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; padding-bottom:16px; margin-bottom:2px; border-bottom: 1px solid rgba(23,63,53,0.14); }
+.feedback-meta dt{ font-family: var(--font-en); font-weight:700; font-size:0.64rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--sage-deep); margin-bottom:4px; }
+.feedback-meta dd{ margin:0; font-size:0.88rem; font-weight:700; color: var(--forest); }
 .feedback-row{ border-top: 1px solid rgba(23,63,53,0.1); padding-top:14px; }
 .feedback-row:first-child{ border-top:none; padding-top:0; }
 .feedback-row dt{ font-family: var(--font-en); font-weight:800; font-size:0.72rem; letter-spacing:0.05em; color: var(--sage-deep); text-transform:uppercase; margin-bottom:6px; }
@@ -422,8 +501,12 @@ p{ margin:0; }
    ========================================================================== */
 .testimonial-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .testimonial-card{
-  background: var(--white); border: 1px solid rgba(23,63,53,0.1); border-radius: var(--radius-m);
-  padding: 30px 26px; display:flex; flex-direction:column;
+  position:relative; background: var(--white); border: 1px solid rgba(23,63,53,0.1); border-radius: var(--radius-m);
+  padding: 40px 26px 30px; display:flex; flex-direction:column;
+}
+.testimonial-card::before{
+  content:'\201C'; position:absolute; top:6px; left:24px; font-family: var(--font-en);
+  font-size:2.6rem; font-weight:800; color: var(--sage); opacity:0.55; line-height:1;
 }
 .testimonial-meta{ font-family: var(--font-en); font-weight:700; font-size:0.75rem; letter-spacing:0.04em; color: var(--sage-deep); text-transform:uppercase; margin-bottom:14px; }
 .testimonial-text{ font-size:0.92rem; color: var(--charcoal); line-height:1.75; flex-grow:1; }
@@ -643,6 +726,7 @@ p{ margin:0; }
   .service-area-tiers{ grid-template-columns: 1fr; }
   .trust-stat-grid{ grid-template-columns: repeat(2, 1fr); gap:24px 16px; }
   .editorial-split{ gap:44px; }
+  .standard-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 860px){
@@ -683,16 +767,31 @@ p{ margin:0; }
   .lesson-example-grid{ grid-template-columns: 1fr; }
   .contact-split{ grid-template-columns: 1fr; }
 
+  .glance-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:0; }
+  .glance-item{ border-left:none; border-top: 1px solid rgba(23,63,53,0.1); padding: 16px 12px; }
+  .glance-item:nth-child(odd){ border-right: 1px solid rgba(23,63,53,0.1); }
+  .glance-item:nth-child(-n+2){ border-top:none; }
+
+  .standard-grid{ grid-template-columns: 1fr; }
+  .compare-wrap{ grid-template-columns: 1fr; }
+  .compare-vs{ padding:12px 0; }
+  .program-cat-grid{ grid-template-columns: 1fr; }
+  .program-cat{ padding: 30px 26px; }
+  .profile-sheet-head{ padding: 22px 24px; }
+  .profile-sheet-body{ padding: 26px 24px; }
+
   .form-grid{ grid-template-columns: 1fr; }
   .consultation-form{ padding: 28px 22px; }
   .matching-form-wrap{ padding: 26px 20px; }
   .form-nav{ flex-direction:column-reverse; }
   .form-nav .btn{ width:100%; }
 
-  body{ padding-bottom: 66px; }
+  body{ padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
   .mobile-sticky-cta{
     display:flex; position:fixed; bottom:0; left:0; right:0; z-index:400;
     box-shadow: 0 -6px 20px rgba(23,63,53,0.16);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: var(--forest);
   }
   .msc-full{
     display:block; width:100%; text-align:center; padding:17px 0; font-weight:700; font-size:0.98rem;
@@ -707,4 +806,9 @@ p{ margin:0; }
   .checkbox-grid{ gap: 10px 16px; }
   .teacher-detail div{ flex-direction:column; gap:2px; }
   .teacher-detail dd{ text-align:left; }
+  .profile-sheet-body{ grid-template-columns: 1fr; }
+  .profile-sheet-row{ border-top: 1px solid rgba(23,63,53,0.1); padding-top:12px; }
+  .profile-sheet-row:nth-child(-n+2){ border-top: 1px solid rgba(23,63,53,0.1); padding-top:12px; }
+  .profile-sheet-row:first-child{ border-top:none; padding-top:0; }
+  .feedback-meta{ grid-template-columns: 1fr; gap:8px; }
 }
