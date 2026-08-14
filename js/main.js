@@ -52,7 +52,7 @@
     });
   });
 
-  /* ---------- Phone links wired from config ---------- */
+  /* ---------- Phone / SMS links wired from config ---------- */
   var phone = (CONFIG.CONTACT_PHONE || '').trim();
 
   document.querySelectorAll('.js-tel-link').forEach(function (el) {
@@ -64,15 +64,44 @@
     }
   });
 
+  document.querySelectorAll('.js-sms-link').forEach(function (el) {
+    if (phone) {
+      el.setAttribute('href', 'sms:' + phone.replace(/[^0-9+]/g, ''));
+    } else {
+      el.setAttribute('href', '#consultation');
+      el.setAttribute('title', '문자 상담 연결 준비 중입니다. 아래 상담 신청 폼을 이용해주세요.');
+    }
+  });
+
   // Elements that should show the actual phone number as visible text (not hidden behind a button label)
   document.querySelectorAll('.js-tel-text').forEach(function (el) {
     el.textContent = phone || '전화 상담 준비 중';
   });
 
-  /* ---------- Click event tracking ---------- */
+  /* ---------- Click event tracking (data-track may hold multiple space-separated
+     event names, e.g. "consultation_click hero_sample_click", so a button can keep
+     firing an existing broad event while also feeding a new, more specific one) ---------- */
   document.querySelectorAll('[data-track]').forEach(function (el) {
     el.addEventListener('click', function () {
-      track(el.getAttribute('data-track'), { label: el.getAttribute('data-track-label') || '' });
+      var label = el.getAttribute('data-track-label') || '';
+      el.getAttribute('data-track').split(/\s+/).filter(Boolean).forEach(function (name) {
+        track(name, { label: label });
+      });
+    });
+  });
+
+  /* ---------- Conversion intent tracking (sample-lesson-first funnel) ----------
+     Any CTA marked data-intent="sample" or data-intent="consultation" records which
+     path the parent chose before reaching the matching form, so the form's start/
+     complete events below can fire the matching sample_payment_* event alongside
+     the general ones. No fake payment step is simulated — this only tracks real
+     clicks and the real form submission that already exists. */
+  function getIntent() {
+    try { return sessionStorage.getItem('jp_intent') || ''; } catch (e) { return ''; }
+  }
+  document.querySelectorAll('[data-intent]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      try { sessionStorage.setItem('jp_intent', el.getAttribute('data-intent')); } catch (e) { /* no-op */ }
     });
   });
 
@@ -215,6 +244,15 @@
     var rowsHtml = rows.map(function (r) {
       return '<div class="profile-sheet-row"><dt>' + r[0] + '</dt><dd>' + r[1] + '</dd></div>';
     }).join('');
+    var whyHtml = '';
+    if (Array.isArray(sheet.whyMatch) && sheet.whyMatch.length) {
+      whyHtml =
+        '<div class="profile-sheet-why">' +
+          '<p class="profile-sheet-why-label">Why We Matched</p>' +
+          (sheet.matchNote ? '<p class="profile-sheet-why-note">&ldquo;' + sheet.matchNote + '&rdquo;</p>' : '') +
+          '<div class="profile-sheet-why-list">' + sheet.whyMatch.map(function (r) { return '<span>' + r + '</span>'; }).join('') + '</div>' +
+        '</div>';
+    }
     profileSheetEl.innerHTML =
       '<div class="profile-sheet-head">' +
         '<div><p class="profile-sheet-eyebrow">JOHN PREP TUTOR PROFILE SHEET</p>' +
@@ -223,7 +261,67 @@
         (sheet.isSample ? '<span class="profile-sheet-badge">SAMPLE FORMAT</span>' : '') +
       '</div>' +
       '<dl class="profile-sheet-body">' + rowsHtml + '</dl>' +
+      whyHtml +
       '<div class="profile-sheet-foot">실제 매칭 후에는 상담을 통해 확인된 Tutor의 Profile Sheet가 안내됩니다.</div>';
+  }
+
+  /* ---------- Render: Try Before Regular Lessons (3-step) ---------- */
+  var tryFirstGridEl = document.getElementById('tryFirstGrid');
+  if (tryFirstGridEl && Array.isArray(DATA.TRY_FIRST_STEPS)) {
+    DATA.TRY_FIRST_STEPS.forEach(function (step) {
+      var card = document.createElement('div');
+      card.className = 'standard-step';
+      card.innerHTML =
+        '<span class="standard-step-num">' + step.num + '</span>' +
+        '<h3>' + step.title + '</h3>' +
+        '<p>' + step.desc + '</p>';
+      tryFirstGridEl.appendChild(card);
+    });
+  }
+
+  /* ---------- Render: Sample Lesson product card (features + price) ---------- */
+  var sampleFeaturesEl = document.getElementById('sampleFeatures');
+  if (sampleFeaturesEl && Array.isArray(DATA.SAMPLE_LESSON_FEATURES)) {
+    DATA.SAMPLE_LESSON_FEATURES.forEach(function (f) {
+      var li = document.createElement('li');
+      li.textContent = f;
+      sampleFeaturesEl.appendChild(li);
+    });
+  }
+  var samplePriceEl = document.getElementById('samplePriceValue');
+  if (samplePriceEl) {
+    var samplePrice = (CONFIG.SAMPLE_LESSON_PRICE || '').trim();
+    samplePriceEl.textContent = samplePrice || '상담 후 안내';
+  }
+
+  /* ---------- Render: Payment-anxiety reassurance list ---------- */
+  var reassureListEl = document.getElementById('reassureList');
+  if (reassureListEl && Array.isArray(DATA.SAMPLE_REASSURANCE)) {
+    DATA.SAMPLE_REASSURANCE.forEach(function (item) {
+      var wrap = document.createElement('div');
+      wrap.className = 'reassure-item';
+      wrap.innerHTML = '<p class="reassure-q">' + item.q + '</p><p class="reassure-a">' + item.a + '</p>';
+      reassureListEl.appendChild(wrap);
+    });
+  }
+
+  /* ---------- Render: sample-related testimonials (featured near Sample Lesson) ---------- */
+  var sampleTestimonialGridEl = document.getElementById('sampleTestimonialGrid');
+  var sampleTestimonialSection = document.getElementById('sample-social-proof');
+  if (sampleTestimonialGridEl && Array.isArray(DATA.TESTIMONIALS)) {
+    var sampleRelated = DATA.TESTIMONIALS.filter(function (t) { return t.sampleRelated; });
+    if (sampleRelated.length) {
+      sampleRelated.forEach(function (t) {
+        var card = document.createElement('div');
+        card.className = 'testimonial-card';
+        card.innerHTML =
+          (t.meta ? '<p class="testimonial-meta">' + t.meta + '</p>' : '') +
+          '<p class="testimonial-text">&ldquo;' + t.quote + '&rdquo;</p>';
+        sampleTestimonialGridEl.appendChild(card);
+      });
+    } else if (sampleTestimonialSection) {
+      sampleTestimonialSection.remove();
+    }
   }
 
   /* ---------- Render: Programs (4-category grid) ---------- */
@@ -565,7 +663,12 @@
 
     var startTracked = false;
     matchingForm.addEventListener('focusin', function () {
-      if (!startTracked) { startTracked = true; track('consultation_form_start', {}); }
+      if (!startTracked) {
+        startTracked = true;
+        track('consultation_form_start', {});
+        track('matching_form_start', { intent: getIntent() });
+        if (getIntent() === 'sample') track('sample_payment_start', {});
+      }
     });
 
     var MULTI_FIELDS = ['learningEnvironments', 'childPersonalities', 'lessonInterests', 'lessonStyles', 'tutorStyles', 'days', 'timeSlots'];
@@ -628,6 +731,8 @@
 
     function onSubmitSuccess() {
       track('consultation_form_submit', {});
+      track('matching_form_complete', { intent: getIntent() });
+      if (getIntent() === 'sample') track('sample_payment_complete', {});
       matchingForm.hidden = true;
       progressWrap.hidden = true;
       formThankYou.hidden = false;

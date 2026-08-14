@@ -37,6 +37,7 @@ window.JOHN_PREP_DATA = {
   TESTIMONIALS: [
     {
       meta: "4세 여아 학부모",
+      sampleRelated: true,
       quote: "아이가 아직 어려서 원어민 수업을 너무 일찍 시작하는 건 아닌지 고민을 많이 했어요. 처음에는 선생님이 오시면 저한테만 붙어 있으려고 했는데, 선생님께서 억지로 영어를 시키지 않고 장난감이랑 그림책으로 자연스럽게 놀아주시니까 금방 적응하더라고요. 요즘은 선생님 오시는 날이면 먼저 영어 선생님 언제 오냐고 물어봐요. 집에서 수업하니까 이동하지 않아도 되는 것도 생각보다 정말 편하고요. 어린아이 수업 경험이 있는 선생님으로 매칭해 주신 점이 가장 만족스러웠습니다."
     },
     {
@@ -49,6 +50,7 @@ window.JOHN_PREP_DATA = {
     },
     {
       meta: "5세 여아 학부모",
+      sampleRelated: true,
       quote: "아이가 낯을 많이 가리는 편이라 사실 첫 수업 전까지 걱정을 많이 했어요. 그런데 선생님이 아이 눈높이에 맞춰서 계속 웃으면서 기다려주시고 처음부터 수업하려고 하지 않으셨어요. 첫날은 거의 놀이 위주였는데 두 번째, 세 번째 수업부터 아이가 먼저 영어로 색깔이나 동물 이름을 이야기하기 시작했습니다. 저는 어린아이일수록 선생님 성격이 정말 중요하다고 생각하는데 저희 아이와 잘 맞는 선생님을 연결해 주셔서 만족하고 있어요. 수업 있는 날을 아이가 기다리는 것만으로도 잘 시작했다는 생각이 듭니다."
     },
     {
@@ -201,8 +203,43 @@ window.JOHN_PREP_DATA = {
     ageSpecialization: "Ages 3–7",
     teachingStyle: "Warm · Patient · Interactive",
     lessonFocus: "Phonics · Reading · Speaking · Kindergarten Prep",
-    schedule: "상담을 통해 확인 (Confirmed After Consultation)"
+    schedule: "상담을 통해 확인 (Confirmed After Consultation)",
+    matchNote: "아이의 현재 영어 수준과 유아 수업 목표를 고려하여 추천된 Tutor 예시입니다.",
+    whyMatch: ["유아 수업 경험 다수", "Phonics 지도 가능", "Speaking 중심 Interaction", "요청 연령대 수업 경험"]
   },
+
+  // ---------------------------------------------------------------------
+  // Try Before Regular Lessons — the core sample-first conversion pitch.
+  // ---------------------------------------------------------------------
+  TRY_FIRST_STEPS: [
+    { num: "01", title: "Meet Your Tutor", desc: "매칭된 선생님의 주요 프로필을 먼저 확인합니다." },
+    { num: "02", title: "Try One Lesson", desc: "실제 1:1 수업을 경험합니다." },
+    { num: "03", title: "Decide After", desc: "아이의 반응과 수업 방식을 확인한 뒤 정규수업을 결정합니다." }
+  ],
+
+  // ---------------------------------------------------------------------
+  // Payment-anxiety reassurance — shown directly beside the Sample Lesson
+  // CTA, not buried only in the FAQ accordion.
+  // ---------------------------------------------------------------------
+  SAMPLE_REASSURANCE: [
+    { q: "선생님을 보지도 않고 결제해야 하나요?", a: "아닙니다. 먼저 학생 조건에 맞는 Tutor를 매칭하고 가능한 범위에서 Tutor Profile을 안내합니다." },
+    { q: "샘플수업 후 꼭 정규수업을 해야 하나요?", a: "샘플수업 후 아이와 Tutor의 적합도를 확인하고 정규수업 여부를 결정할 수 있도록 안내합니다." },
+    { q: "아이가 선생님을 어려워하면 어떡하나요?", a: "아이의 반응, 수업 방식, Tutor와의 Interaction을 샘플수업에서 직접 확인할 수 있습니다." },
+    { q: "유아인데 수업이 가능한지 모르겠어요.", a: "연령만으로 판단하기보다 영어 노출 경험, 낯가림, 집중 시간 등을 상담 후 고려합니다." },
+    { q: "어떤 선생님이 오는지 모르는데 결제하기 불안해요.", a: "Tutor Matching 후 가능한 범위에서 Tutor Profile을 안내한 뒤 샘플수업으로 연결합니다." }
+  ],
+
+  // ---------------------------------------------------------------------
+  // Sample Lesson product card — the entry product. Price stays "상담 후
+  // 안내" unless CONFIG.SAMPLE_LESSON_PRICE is set to a real value.
+  // ---------------------------------------------------------------------
+  SAMPLE_LESSON_FEATURES: [
+    "Personalized Tutor Matching",
+    "Tutor Profile Before Lesson",
+    "Private 1:1 Lesson",
+    "Parent Feedback & Consultation",
+    "No Need to Commit to Regular Lessons First"
+  ],
 
   // ---------------------------------------------------------------------
   // Programs — 4 age/goal categories, the primary program structure.

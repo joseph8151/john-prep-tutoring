@@ -27,6 +27,11 @@ window.JOHN_PREP_CONFIG = {
   // pricing on the site. Leave at 0 to show percentage-only guidance with no won amounts.
   BASE_LESSON_PRICE: 0,
 
+  // TODO (optional): Set the real 1-time Sample Lesson price as a display string
+  // (e.g. "50,000원") if JOHN PREP publishes one. Leave blank to show "상담 후 안내"
+  // instead — never invent a price.
+  SAMPLE_LESSON_PRICE: "",
+
   // Fixed multipliers for shared (group) lessons — applied to BASE_LESSON_PRICE, per-student
   // cost drops as group size grows. Edit only if JOHN PREP's group pricing policy changes.
   GROUP_PRICING_MULTIPLIERS: { 1: 1.0, 2: 1.2, 3: 1.4, 4: 1.6 }
