@@ -1,0 +1,7 @@
+src/
+wrangler.jsonc
+.assetsignore
+.claude/
+serve.ps1
+README.md
+.gitignore

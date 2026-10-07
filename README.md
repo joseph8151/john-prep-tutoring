@@ -21,8 +21,8 @@ Tutor Marketplace가 아니라, 매니저가 상담 후 적합한 선생님을 �
 - `js/analytics.js` — Google Analytics 4 연동 및 이벤트 트래킹 (두 페이지 공용)
 - `js/main.js` — 메인 홈페이지 인터랙션 (5단계 상담폼, 아코디언, 가격 계산기 등)
 - `js/tutor-application.js` — 선생님 지원 폼 인터랙션 및 제출
-- `api/consultation.js` — 상담 신청 이메일 발송 (Vercel 서버리스, Resend 사용)
-- `api/tutor-application.js` — 선생님 지원 이메일 발송 (위와 동일한 구조)
+- `src/worker.js` — 상담/지원 이메일 발송 (Cloudflare Worker, Resend 사용). `POST /api/consultation`, `POST /api/tutor-application` 두 라우트를 처리하고, 그 외 모든 요청은 정적 파일로 서빙합니다.
+- `wrangler.jsonc` — Cloudflare Worker 설정 (정적 자산 디렉터리, API 라우팅)
 - `assets/illustrations/` — 브랜드 컬러 기반 커스텀 SVG 일러스트 (스톡 사진 대신 사용)
 - `assets/og-image.png` (+ 소스 `og-card.svg`/`og-card.html`) — 카카오톡/SNS 공유 미리보기 이미지
 - `serve.ps1` / `.claude/launch.json` — 로컬 미리보기용 정적 서버
@@ -33,9 +33,9 @@ Tutor Marketplace가 아니라, 매니저가 상담 후 적합한 선생님을 �
 |---|---|---|
 | `CONTACT_PHONE` | ✅ 설정됨 | 헤더·히어로·Contact 섹션·푸터·모바일 메뉴에 텍스트로 노출됩니다 (문자 상담 버튼은 제거됨 — 오작동 이슈로 전화만 사용). |
 | `GA_MEASUREMENT_ID` | ✅ 설정됨 | Google Analytics 4. |
-| `CONSULTATION_FORM_ACTION` | ✅ 설정됨 (Formspree) | 상담폼 이메일 수신처. `api/consultation.js`(Resend)가 아직 미설정이라 현재는 이 Formspree로만 전송됩니다. |
+| `CONSULTATION_FORM_ACTION` | ✅ 설정됨 (Formspree) | 상담폼 이메일 수신처. `src/worker.js`(Resend)가 아직 미설정이라 현재는 이 Formspree로만 전송됩니다. |
 | `TUTOR_APPLICATION_FORM_ACTION` | 비어 있음 | 비워두면 선생님 지원 폼도 위 Formspree로 함께 전송됩니다. 별도 수신함이 필요하면 Formspree 폼을 하나 더 만들어 넣으세요. |
-| `RESEND_API_KEY` / `CONTACT_EMAIL` | 미설정 (Vercel 환경변수) | 설정하면 두 폼 모두 자체 서버리스 API가 보기 좋은 HTML 이메일을 직접 발송하고, Formspree는 자동 폴백으로만 남습니다. |
+| `RESEND_API_KEY` / `CONTACT_EMAIL` | 미설정 (Cloudflare Worker 변수) | Cloudflare 대시보드 → Workers & Pages → john-prep-tutoring → Settings → Variables and Secrets에서 설정하면 두 폼 모두 Worker가 보기 좋은 HTML 이메일을 직접 발송하고, Formspree는 자동 폴백으로만 남습니다. |
 | `BASE_LESSON_PRICE` | `0` | 1:1 기준 실제 수업료(원). 0이면 그룹 수업료를 퍼센트로만 표시, 값을 넣으면 원화로 자동 계산됩니다. |
 | `BUSINESS_REG_NUMBER` / `BUSINESS_EMAIL` / `BUSINESS_HOURS` | 비어 있음 | 실제 값이 없어 임의로 채우지 않았습니다. 값을 넣는 즉시 푸터에 표시됩니다. |
 
@@ -59,14 +59,18 @@ Node/Python 없이도 PowerShell 정적 서버로 바로 확인할 수 있습니
 powershell -ExecutionPolicy Bypass -File serve.ps1
 ```
 
-이후 `http://localhost:8123` 접속. `/api/*` 서버리스 함수는 로컬에서 동작하지 않고 Vercel 배포 환경에서만
-동작합니다 — 로컬에서는 상담폼이 자동으로 Formspree로 폴백됩니다 (정상 동작).
+이후 `http://localhost:8123` 접속. `/api/*` 라우트(`src/worker.js`)는 이 정적 서버에서 동작하지 않고
+Cloudflare 배포 환경에서만 동작합니다 — 로컬에서는 상담폼이 자동으로 Formspree로 폴백됩니다 (정상 동작).
+Worker까지 포함해 로컬에서 확인하려면 `npx wrangler dev`를 사용하세요.
 
 ## 배포
 
-GitHub `main` 브랜치에 push하면 Vercel이 자동 배포합니다. 만약 push 후에도 라이브 사이트가 갱신되지
-않으면, Vercel 대시보드 → Deployments에서 최신 배포를 찾아 **Promote to Production**을 눌러야 할 수
-있습니다 (Git 연동은 정상이지만 자동 승격이 간헐적으로 안 되는 경우가 있었습니다).
+Cloudflare Workers (Workers & Pages → john-prep-tutoring)가 이 GitHub 저장소의 `main` 브랜치에 연결되어
+있어, push하면 자동으로 빌드·배포됩니다. `wrangler.jsonc`의 `assets.directory`가 정적 파일을 서빙하고,
+`src/worker.js`가 `/api/consultation`·`/api/tutor-application` 요청만 가로채 처리합니다.
+
+배포 후 `RESEND_API_KEY` / `CONTACT_EMAIL`을 Cloudflare 대시보드(Settings → Variables and Secrets)에
+설정해야 Worker가 직접 이메일을 발송합니다. 미설정 상태에서는 두 폼 모두 Formspree로 자동 폴백됩니다.
 
 ## 관리자 Analytics 대시보드
 
