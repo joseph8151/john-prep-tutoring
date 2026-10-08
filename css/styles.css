@@ -16,9 +16,11 @@
   --font-kr: 'Pretendard Variable', 'Manrope', -apple-system, sans-serif;
 
   --container-w: 1180px;
-  --radius-s: 4px;
-  --radius-m: 8px;
+  --radius-s: 6px;
+  --radius-m: 14px;
   --header-h: 76px;
+  --shadow-card: 0 1px 2px rgba(23,63,53,0.06), 0 12px 28px -12px rgba(23,63,53,0.16);
+  --shadow-lift: 0 8px 20px -6px rgba(23,63,53,0.28);
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -55,7 +57,7 @@ p{ margin:0; }
   transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
   white-space: nowrap;
 }
-.btn-primary{ background: var(--forest); color: var(--white); }
+.btn-primary{ background: var(--forest); color: var(--white); box-shadow: var(--shadow-lift); }
 .btn-primary:hover{ background: var(--forest-light); transform: translateY(-1px); }
 .btn-ghost{ background: transparent; color: var(--forest); border-color: rgba(23,63,53,0.22); }
 .btn-ghost:hover{ border-color: var(--forest); }
@@ -167,6 +169,7 @@ p{ margin:0; }
   background: linear-gradient(155deg, var(--forest) 0%, var(--forest-light) 55%, #35695A 100%);
   position:relative; overflow:hidden;
   display:flex; align-items:flex-end;
+  box-shadow: var(--shadow-card);
 }
 .ph-photo::after{
   content:''; position:absolute; inset:auto 0 0 0; height:40%; z-index:1;
@@ -501,7 +504,7 @@ p{ margin:0; }
 /* ==========================================================================
    Consultation form
    ========================================================================== */
-.consultation-form{ background: var(--white); border-radius: var(--radius-m); padding: 44px 40px; }
+.consultation-form{ background: var(--white); border-radius: var(--radius-m); padding: 44px 40px; box-shadow: var(--shadow-card); }
 .form-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; margin-bottom:24px; }
 .form-field label, fieldset.form-field legend{ display:block; font-weight:600; font-size:0.88rem; color: var(--forest); margin-bottom:8px; }
 .req{ color: var(--sage-deep); }
@@ -528,7 +531,7 @@ p{ margin:0; }
 /* ==========================================================================
    Tutor Matching Request — step form
    ========================================================================== */
-.matching-form-wrap{ background: var(--white); border-radius: var(--radius-m); padding: 44px 40px; }
+.matching-form-wrap{ background: var(--white); border-radius: var(--radius-m); padding: 44px 40px; box-shadow: var(--shadow-card); }
 .form-time-hint{ font-family: var(--font-en); font-weight:700; font-size:0.78rem; letter-spacing:0.05em; color: var(--sage-deep); text-transform:uppercase; margin-bottom:22px; }
 
 .form-progress{ display:flex; align-items:center; gap:16px; margin-bottom:36px; }

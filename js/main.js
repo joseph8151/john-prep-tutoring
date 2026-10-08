@@ -253,7 +253,6 @@
     });
   }
 
-  buildAccordion(document.getElementById('parentConcernsAccordion'), DATA.PARENT_CONCERNS, 'faq_open');
   buildAccordion(document.getElementById('faqAccordion'), DATA.FAQ, 'faq_open');
 
   /* ---------- Footer business + support info ---------- */
