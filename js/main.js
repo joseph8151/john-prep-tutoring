@@ -94,7 +94,11 @@
     DATA.AGE_JOURNEY.forEach(function (stage) {
       var card = document.createElement('div');
       card.className = 'age-card';
+      var photoHtml = stage.img
+        ? '<div class="photo-card photo-card--tile"><img src="' + stage.img + '" alt="' + stage.alt + '" loading="lazy"></div>'
+        : '';
       card.innerHTML =
+        photoHtml +
         '<span class="age-range">' + stage.range + '</span>' +
         '<h3>' + stage.title + '</h3>' +
         '<p>' + stage.desc + '</p>';

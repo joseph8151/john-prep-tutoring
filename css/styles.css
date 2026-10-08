@@ -183,6 +183,15 @@ p{ margin:0; }
   font-weight:600; font-size:0.85rem; color: rgba(255,255,255,0.92); letter-spacing:0.03em;
 }
 
+/* Real lesson photos — plain cards, no caption/logo/filter overlays. */
+.photo-card{ border-radius: var(--radius-m); overflow:hidden; box-shadow: var(--shadow-card); }
+.photo-card img{ display:block; width:100%; height:100%; object-fit:cover; }
+.photo-card--hero{ aspect-ratio: 16/9; }
+.photo-card--tile{ height:200px; border-radius: var(--radius-s); margin-bottom:16px; }
+
+.hero-inner.hero-inner--stacked{ grid-template-columns: 1fr; align-items:start; }
+.hero-inner--stacked .hero-copy{ max-width:640px; }
+
 /* ==========================================================================
    Trust bar (badge row)
    ========================================================================== */
