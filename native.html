@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원어민 방문 | 존프랩튜터링</title>
+<meta name="description" content="미국·캐나다 출신 Native English Teacher와 집에서 진행하는 1:1 방문 영어수업. 상담 후 매니저가 매칭합니다.">
+<meta property="og:title" content="원어민 방문 | 존프랩튜터링">
+<meta property="og:description" content="미국·캐나다 출신 Native English Teacher와 집에서 진행하는 1:1 방문 영어수업.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.johnpreptutoring.site/native.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/simple.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="존프랩튜터링 홈으로 이동">
+      <span class="logo-text label-serif">JOHN PREP TUTORING</span>
+    </a>
+
+    <nav class="main-nav simple-nav" id="mainNav" aria-label="주요 메뉴">
+      <a href="native.html">원어민 방문</a>
+      <a href="prep.html">시험 프렙</a>
+      <a href="become-a-tutor.html">선생님 지원</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="native.html">원어민 방문</a>
+    <a href="prep.html">시험 프렙</a>
+    <a href="become-a-tutor.html">선생님 지원</a>
+  </div>
+</header>
+
+<main id="top" class="simple-main">
+
+<!-- ============ INTRO — the only place this headline appears ============ -->
+<section class="simple-section" style="padding-bottom:0;">
+  <div class="simple-container">
+    <span class="label-serif">NATIVE</span>
+    <h1 style="font-size:clamp(1.6rem, 2.6vw, 2.1rem); margin:18px 0 20px; max-width:620px;">단순히 유창한 게 아니라, 진짜 원어민입니다.</h1>
+    <p style="font-size:1.02rem; line-height:1.8; max-width:560px; margin:0 0 40px;">존프랩튜터링은 단순히 영어를 잘하는 강사가 아닌 미국·캐나다 출신 Native English Teacher를 매칭합니다. 교재 속 영어가 아닌, 실제 자연스러운 발음과 표현을 1:1 수업으로 경험합니다.</p>
+
+    <div class="photo-card reveal" style="aspect-ratio:16/9; max-width:780px;">
+      <img src="assets/photos/jp_02_toddler.jpg" alt="거실에서 블록으로 하는 유아 원어민 수업">
+    </div>
+
+    <div class="steps-row reveal">
+      <span>상담</span><span class="steps-arrow">→</span>
+      <span>매니저</span><span class="steps-arrow">→</span>
+      <span>선생님 소개</span><span class="steps-arrow">→</span>
+      <span>샘플수업</span><span class="steps-arrow">→</span>
+      <span>정규수업</span>
+    </div>
+
+    <dl class="facts-row">
+      <div><dt>연령</dt><dd>만 2세부터 초등까지</dd></div>
+      <div><dt>수업</dt><dd>1:1 방문수업</dd></div>
+      <div><dt>지역</dt><dd>서울·수도권·광역시</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ TUTOR MATCHING REQUEST FORM ============ -->
+<section class="simple-section" id="consultation">
+  <div class="simple-container simple-container--narrow">
+    <div class="section-head reveal">
+      <p class="eyebrow">상담 신청</p>
+      <h2>아이에 대해<br>먼저 알려주세요.</h2>
+      <p class="section-desc">작성해주신 내용을 존프랩 매니저가 확인한 후 상담을 통해 아이에게 적합한 Tutor를 찾아드립니다.</p>
+    </div>
+
+    <div class="matching-form-wrap reveal">
+      <p class="form-time-hint">Tutor Matching Request &middot; Takes about 2&ndash;3 minutes</p>
+
+      <div class="form-progress" id="formProgress">
+        <div class="form-progress-bar"><div class="form-progress-fill" id="formProgressFill"></div></div>
+        <p class="form-progress-label"><span id="formStepCurrent">1</span> / 5</p>
+      </div>
+
+      <form id="matchingForm" novalidate>
+        <input type="text" name="company" id="companyHoneypot" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="renderedAt" id="renderedAt">
+
+        <!-- STEP 1: About Your Child -->
+        <div class="form-step is-active" data-step="1">
+          <p class="form-step-title">STEP 1 &middot; About Your Child</p>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="studentAge">아이 나이 <span class="req">*</span></label>
+            <select id="studentAge" name="studentAge" required></select>
+          </div>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">아이 성별</span>
+            <div class="choice-group" id="genderGroup"></div>
+          </div>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">현재 영어 수준은 어느 정도인가요? <span class="req">*</span></span>
+            <div class="choice-group choice-group--cards" id="englishLevelGroup"></div>
+          </div>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">현재 어떤 영어 환경에 있나요?</span>
+            <div class="choice-group" id="learningEnvGroup"></div>
+          </div>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">아이는 어떤 성향인가요?</span>
+            <div class="choice-group" id="personalityGroup"></div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Lesson Goals -->
+        <div class="form-step" data-step="2">
+          <p class="form-step-title">STEP 2 &middot; Lesson Goals</p>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">어떤 수업을 원하시나요?</span>
+            <div class="choice-group" id="lessonInterestGroup"></div>
+          </div>
+
+          <div class="trust-note">
+            <strong>Not sure what to choose?</strong> 괜찮습니다. 정확한 수업 방식이나 선생님 스타일을 모르셔도 &ldquo;존프랩 추천&rdquo;을 선택하시면 상담 내용을 바탕으로 적합한 방향을 안내합니다.
+          </div>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">어떤 스타일의 수업을 원하시나요?</span>
+            <div class="choice-group choice-group--cards" id="lessonStyleGroup"></div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Tutor Preference -->
+        <div class="form-step" data-step="3">
+          <p class="form-step-title">STEP 3 &middot; Tutor Preference</p>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">선호하는 선생님 출신 국가</span>
+            <div class="choice-group" id="tutorCountryGroup"></div>
+            <p class="form-field-note">All 존프랩 tutors are native English speakers from the United States or Canada.</p>
+          </div>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">선생님 성별 선호</span>
+            <div class="choice-group" id="tutorGenderGroup"></div>
+          </div>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">원하는 선생님 스타일</span>
+            <div class="choice-group" id="tutorStyleGroup"></div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Location & Schedule -->
+        <div class="form-step" data-step="4">
+          <p class="form-step-title">STEP 4 &middot; Location &amp; Schedule</p>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="region">수업 희망 지역 &middot; 시/도 <span class="req">*</span></label>
+            <select id="region" name="region" required></select>
+          </div>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="district">구 / 동</label>
+            <input type="text" id="district" name="district" placeholder="예: 서초구 반포동">
+          </div>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="apartment">아파트명 / 주거지역 <span class="req">*</span></label>
+            <input type="text" id="apartment" name="apartment" placeholder="예: 반포자이 / 아크로리버파크 / ○○동 단독주택" required>
+            <p class="form-field-note">정확한 동·호수는 상담 단계에서 입력하지 않으셔도 됩니다. 선생님 이동 가능 여부 확인을 위해 아파트명 또는 인근 지역까지만 알려주세요.</p>
+          </div>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="lessonFrequency">희망 수업 횟수</label>
+            <select id="lessonFrequency" name="lessonFrequency"></select>
+          </div>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="lessonDuration">희망 수업 시간</label>
+            <select id="lessonDuration" name="lessonDuration"></select>
+          </div>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">가능한 요일</span>
+            <div class="choice-group" id="daysGroup"></div>
+          </div>
+
+          <div class="form-subgroup">
+            <span class="form-subgroup-label">희망 시간대</span>
+            <div class="choice-group" id="timeSlotGroup"></div>
+          </div>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="scheduleNote">요일/시간 직접 입력 (선택)</label>
+            <input type="text" id="scheduleNote" name="scheduleNote" placeholder="예: 화/목 오후 4시 이후 가능">
+          </div>
+        </div>
+
+        <!-- STEP 5: Contact -->
+        <div class="form-step" data-step="5">
+          <p class="form-step-title">STEP 5 &middot; Contact</p>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="parentName">학부모 성함 <span class="req">*</span></label>
+            <input type="text" id="parentName" name="parentName" placeholder="예: 김○○" required>
+          </div>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="phone">연락 가능한 휴대폰 번호 <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" inputmode="tel" placeholder="010-0000-0000" required>
+          </div>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="email">이메일</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com">
+          </div>
+
+          <div class="form-subgroup">
+            <label class="form-subgroup-label" for="message">선생님께 바라는 점이나 상담하고 싶은 내용이 있나요?</label>
+            <textarea id="message" name="message" rows="5" placeholder="예: 아이가 낯을 많이 가리는 편이라 어린아이 경험이 많고 밝은 여성 선생님을 선호합니다. 영유를 다니고 있지만 Speaking을 조금 더 강화하고 싶습니다."></textarea>
+          </div>
+
+          <div class="form-subgroup consent-field">
+            <label class="consent-label">
+              <input type="checkbox" id="consent" name="consent" required>
+              <span>개인정보 수집 및 이용에 동의합니다. <span class="req">*</span></span>
+            </label>
+            <p class="consent-note">상담 및 Tutor Matching을 위해 이름, 연락처, 학생 정보, 지역 및 상담 내용을 수집합니다. <a href="privacy.html">자세히 보기</a></p>
+            <label class="consent-label" style="margin-top:14px;">
+              <input type="checkbox" id="marketingOptIn" name="marketingOptIn">
+              <span>새로운 프로그램 및 이벤트 소식을 문자/이메일로 받아보겠습니다. (선택)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-ghost" id="formPrevBtn" hidden>이전</button>
+          <button type="button" class="btn btn-primary" id="formNextBtn">다음</button>
+          <button type="submit" class="btn btn-primary btn-lg" id="formSubmitBtn" hidden>매니저 상담 신청하기</button>
+        </div>
+
+        <p class="form-reassurance">
+          <span class="en">Request a Consultation</span>
+          폼 제출 후 바로 선생님이 배정되는 것이 아닙니다. 존프랩 매니저 상담 후 적합한 Tutor를 검토하여 소개드립니다.
+        </p>
+        <p class="form-note" id="formNote" hidden></p>
+        <p class="form-error" id="formError" hidden></p>
+      </form>
+
+      <div class="form-thankyou" id="formThankYou" hidden>
+        <p class="eyebrow">신청 완료</p>
+        <h3>상담 신청이 접수되었습니다.</h3>
+        <p>남겨주신 정보를 존프랩 매니저가 확인합니다. 상담을 통해 아이의 수업 방향과 Tutor 선호 조건을 조금 더 자세히 확인한 후 적합한 미국·캐나다 출신 Native English Teacher를 검토하여 안내드리겠습니다.</p>
+        <a href="index.html" class="btn btn-outline-forest" style="margin-top:20px;">홈으로 돌아가기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="simple-section" id="faq">
+  <div class="simple-container simple-container--narrow">
+    <div class="section-head reveal">
+      <p class="eyebrow">자주 묻는 질문</p>
+      <h2>원어민 방문수업,<br>궁금한 점</h2>
+    </div>
+    <div class="accordion reveal" id="faqAccordion">
+      <!-- Items injected by main.js from js/data.js (FAQ) -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<!-- Section is hidden automatically by main.js when js/data.js TESTIMONIALS is empty. -->
+<section class="simple-section" id="testimonials">
+  <div class="simple-container">
+    <div class="section-head reveal">
+      <p class="eyebrow">학부모 후기</p>
+      <h2>학부모님들의 이야기</h2>
+    </div>
+    <div class="testimonial-grid reveal" id="testimonialGrid">
+      <!-- Cards injected by main.js from js/data.js (TESTIMONIALS) -->
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer simple-footer">
+  <div class="simple-container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo logo--footer">
+        <span class="logo-text label-serif">JOHN PREP TUTORING</span>
+      </a>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="native.html">원어민 방문</a>
+      <a href="prep.html">시험 프렙</a>
+      <a href="become-a-tutor.html">선생님 지원</a>
+      <a href="privacy.html">개인정보처리방침</a>
+    </nav>
+  </div>
+  <div class="simple-container footer-support" id="footerSupport">
+    <!-- Contact details injected by main.js from js/config.js -->
+  </div>
+  <div class="simple-container footer-business" id="footerBusiness">
+    <!-- Business registration details injected by main.js from js/config.js -->
+  </div>
+  <div class="simple-container footer-bottom">
+    <p>&copy; 존프랩튜터링. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

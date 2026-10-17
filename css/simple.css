@@ -1,0 +1,130 @@
+/* ==========================================================================
+   존프랩튜터링 — Simple System
+   Loaded after css/styles.css on index.html / native.html / prep.html only.
+   become-a-tutor.html and privacy.html are untouched by this file.
+
+   Rules this file encodes:
+   - One background (#F6F3EE), one text color (#1C1A17), one accent (#1F3A34).
+   - No gold, gradient, badge, star rating or number counter.
+   - Korean text stays sans ("고딕"); only small English labels are serif.
+   - No card shadow, no pill buttons, no icon characters.
+   - Generous spacing between sections; on-page copy stays to 1–2 lines.
+   ========================================================================== */
+
+:root{
+  --forest: #1F3A34;
+  --forest-light: #28483F;
+  --sage: #1F3A34;
+  --sage-deep: #1F3A34;
+  --beige: #F6F3EE;
+  --cream: #F6F3EE;
+  --white: #FFFFFF;
+  --charcoal: #1C1A17;
+  --text-secondary: #1C1A17;
+  --radius-s: 2px;
+  --radius-m: 2px;
+  --shadow-card: none;
+  --shadow-lift: none;
+}
+
+body{ background: var(--beige); }
+
+/* English small labels only — everything else stays in the Korean sans stack. */
+.label-serif{
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+
+.logo-text{ font-family: Georgia, 'Times New Roman', serif; letter-spacing: 0.03em; }
+
+/* Buttons: flat rectangle, no shadow, no pill. */
+.btn{ border-radius: 2px; }
+.btn-primary{ box-shadow: none; }
+.btn-primary:hover{ transform: none; }
+
+/* Plain photo cards — no caption overlay, no gradient fallback. */
+.photo-card{ border-radius: 0; overflow:hidden; box-shadow:none; }
+
+/* Flatten the kept consultation-form's chip controls to match (no pill shape). */
+.choice-label{ border-radius: 2px; }
+
+/* ---- Layout helpers shared by index / native / prep ---- */
+.simple-main{ padding-bottom: 0; }
+
+.simple-section{ padding: 96px 0; }
+.simple-section + .simple-section{ border-top: 1px solid rgba(28,26,23,0.1); }
+.simple-container{ max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+.simple-container--narrow{ max-width: 720px; }
+
+/* ---- Home hero ---- */
+.simple-hero{ padding: 72px 0 0; }
+.simple-hero-grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap:64px; align-items:center;
+  padding-bottom: 96px;
+}
+.simple-hero-copy .label-serif{ display:block; margin-bottom:22px; font-size:0.85rem; }
+.simple-hero-copy h1{
+  font-family: var(--font-kr); color: var(--charcoal); font-weight:700;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem); line-height:1.4; margin:0 0 20px;
+}
+.simple-hero-copy p{ font-size:1.02rem; line-height:1.7; color: var(--charcoal); margin:0 0 32px; max-width:440px; }
+.simple-hero-photo{ aspect-ratio: 16/9; }
+
+/* ---- Two-path choice grid ---- */
+.path-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:0; border-top:1px solid rgba(28,26,23,0.22); border-left:1px solid rgba(28,26,23,0.22); }
+.path-card{ border-right:1px solid rgba(28,26,23,0.22); border-bottom:1px solid rgba(28,26,23,0.22); padding:48px 44px; }
+.path-card .label-serif{ display:block; margin-bottom:18px; font-size:0.8rem; }
+.path-card p{ font-size:1.02rem; line-height:1.7; color: var(--charcoal); margin:0 0 14px; }
+.path-card .path-detail{ font-size:0.92rem; color: var(--charcoal); opacity:0.72; margin-bottom:26px; }
+.path-card a.path-link{ font-size:0.95rem; font-weight:600; color: var(--forest); text-decoration: underline; text-underline-offset:3px; }
+
+@media (max-width: 720px){
+  /* Compressed so the two path cards still land on the first screen. */
+  .simple-hero{ padding-top:28px; }
+  .simple-hero-grid{ grid-template-columns: 1fr; gap:18px; padding-bottom:32px; }
+  .simple-hero-copy .label-serif{ margin-bottom:10px; font-size:0.72rem; }
+  .simple-hero-copy h1{ font-size:1.4rem; line-height:1.35; margin-bottom:10px; }
+  .simple-hero-copy p{ font-size:0.92rem; margin-bottom:18px; }
+  .simple-hero-copy .btn{ padding:11px 20px; font-size:0.88rem; }
+  .simple-hero-photo{ aspect-ratio: 16/7; }
+  .path-grid{ grid-template-columns: 1fr; }
+  .path-card{ border-right:none; padding:22px 22px; }
+  .path-card p{ font-size:0.92rem; margin-bottom:8px; }
+  .path-card .path-detail{ font-size:0.84rem; margin-bottom:14px; }
+  .simple-section{ padding:40px 0; }
+}
+
+/* ---- Minimal header (shared) ---- */
+/* Only restyle the link text here — .main-nav (styles.css) already owns
+   display/layout, including hiding itself at <=860px for the hamburger menu. */
+.simple-nav a{ font-size:0.92rem; font-weight:500; color: var(--charcoal); }
+
+/* ---- Steps row (native page matching order) ---- */
+.steps-row{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin: 36px 0 0; }
+.steps-row span{ font-size:0.9rem; font-weight:600; color: var(--charcoal); }
+.steps-row .steps-arrow{ color: var(--charcoal); opacity:0.4; font-weight:400; }
+
+/* ---- Brief facts row ---- */
+.facts-row{ display:grid; grid-template-columns: repeat(3, 1fr); gap:32px; margin-top:40px; padding-top:40px; border-top:1px solid rgba(28,26,23,0.14); }
+.facts-row dt{ font-size:0.78rem; color: var(--charcoal); opacity:0.6; margin-bottom:8px; }
+.facts-row dd{ margin:0; font-size:1rem; color: var(--charcoal); font-weight:600; }
+@media (max-width: 720px){ .facts-row{ grid-template-columns: 1fr; gap:20px; } }
+
+/* ---- Prep categories ---- */
+.prep-list{ border-top:1px solid rgba(28,26,23,0.22); }
+.prep-item{ border-bottom:1px solid rgba(28,26,23,0.22); padding:40px 0; display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; }
+.prep-item-text{ flex:1; min-width:260px; }
+.prep-item h3{ font-family: var(--font-kr); font-size:1.15rem; color: var(--charcoal); margin:0 0 10px; font-weight:700; }
+.prep-item p{ font-size:0.98rem; line-height:1.7; color: var(--charcoal); margin:0; max-width:520px; }
+.prep-item .btn{ flex-shrink:0; }
+
+/* ---- Minimal testimonial / FAQ reuse ---- */
+.simple-section .testimonial-grid{ background:none; }
+.simple-section .testimonial-card{ box-shadow:none !important; border:1px solid rgba(28,26,23,0.16); border-radius:0; }
+.simple-section .accordion-item{ border-color: rgba(28,26,23,0.16); }
+
+/* ---- Footer ---- */
+.simple-footer{ border-top:1px solid rgba(28,26,23,0.22); padding:48px 0 28px; }
+.simple-footer .footer-nav a{ color: var(--charcoal); opacity:0.75; }
+.simple-footer .footer-path a{ color: var(--forest); }
