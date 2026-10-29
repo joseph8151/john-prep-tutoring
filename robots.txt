@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.johnpreptutoring.xyz/sitemap.xml
+Sitemap: https://johnpreptutoring.site/sitemap.xml
