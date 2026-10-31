@@ -128,3 +128,12 @@ body{ background: var(--beige); }
 .simple-footer{ border-top:1px solid rgba(28,26,23,0.22); padding:48px 0 28px; }
 .simple-footer .footer-nav a{ color: var(--charcoal); opacity:0.75; }
 .simple-footer .footer-path a{ color: var(--forest); }
+
+/* ---- become-a-tutor.html: English-only page, small labels go serif ---- */
+html[lang="en"] .eyebrow{ font-family: Georgia, 'Times New Roman', serif; font-weight:400; }
+html[lang="en"] .service-area-tags span{ border-radius: 2px; }
+
+/* No mobile sticky CTA on this page anymore — drop the space it used to reserve. */
+@media (max-width: 860px){
+  html[lang="en"] body{ padding-bottom: 0; }
+}

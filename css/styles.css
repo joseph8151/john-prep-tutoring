@@ -65,6 +65,10 @@ p{ margin:0; }
 .btn-outline-forest:hover{ background: var(--forest); color: var(--white); }
 .btn-outline-white{ background: transparent; color: var(--white); border-color: rgba(255,255,255,0.55); }
 .btn-outline-white:hover{ background: var(--white); color: var(--forest); }
+/* .btn-primary on a forest-background section would otherwise match the background exactly
+   (both use var(--forest)) and disappear but for its text. Give it real contrast there. */
+.section--forest .btn-primary{ background: var(--white); color: var(--forest); }
+.section--forest .btn-primary:hover{ background: var(--beige); }
 .btn-lg{ padding: 16px 32px; font-size: 1rem; }
 .btn-block{ width:100%; }
 
