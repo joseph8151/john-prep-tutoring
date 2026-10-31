@@ -6,6 +6,32 @@
   var FORM_OPTIONS = DATA.FORM_OPTIONS || {};
   var track = window.trackEvent || function () {};
 
+  /* ---------- Structured data (JSON-LD) for search engines ----------
+     Built from js/config.js so it never drifts from the footer/visible
+     business info. Fields left blank in config (e.g. BUSINESS_REG_NUMBER,
+     BUSINESS_HOURS) are simply omitted rather than invented. */
+  if (CONFIG.BUSINESS_NAME) {
+    var ld = {
+      '@context': 'https://schema.org',
+      '@type': 'EducationalOrganization',
+      name: CONFIG.BUSINESS_NAME,
+      alternateName: 'John Prep Tutoring',
+      url: window.location.origin + '/',
+      description: '미국·캐나다 원어민 1:1 방문 영어과외 및 레벨테스트·국제학교 시험 준비',
+      areaServed: ['서울', '경기', '인천']
+    };
+    if (CONFIG.CONTACT_PHONE) ld.telephone = CONFIG.CONTACT_PHONE;
+    if (CONFIG.BUSINESS_ADDRESS) {
+      ld.address = { '@type': 'PostalAddress', streetAddress: CONFIG.BUSINESS_ADDRESS, addressCountry: 'KR' };
+    }
+    if (CONFIG.BUSINESS_HOURS) ld.openingHours = CONFIG.BUSINESS_HOURS;
+    if (CONFIG.BUSINESS_REG_NUMBER) ld.taxID = CONFIG.BUSINESS_REG_NUMBER;
+    var ldScript = document.createElement('script');
+    ldScript.type = 'application/ld+json';
+    ldScript.textContent = JSON.stringify(ld);
+    document.head.appendChild(ldScript);
+  }
+
   /* ---------- Sticky header shadow ---------- */
   var header = document.getElementById('siteHeader');
   function onScroll() {
